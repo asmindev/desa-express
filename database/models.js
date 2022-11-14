@@ -3,6 +3,58 @@ const mongoose = require('mongoose')
 
 const { Schema } = mongoose
 
+const desaSchema = new Schema({
+    name: {
+        type: String,
+        required: true,
+    },
+    location: {
+        type: String,
+        required: true,
+    },
+    population: {
+        type: Number,
+        required: true,
+    },
+    vision: {
+        type: String,
+        required: true,
+    },
+    mission: {
+        type: Array,
+        required: true,
+    },
+})
+
+const potensiSchema = new Schema({
+    type: {
+        type: String,
+        required: true,
+    },
+    photo: {
+        type: String,
+        required: true,
+    },
+    description: {
+        type: String,
+        required: true,
+    },
+})
+const kegiatanSchema = new Schema({
+    name: {
+        type: String,
+        required: true,
+    },
+    photo: {
+        type: String,
+        required: true,
+    },
+    description: {
+        type: String,
+        required: true,
+    },
+})
+
 const organizationSchema = new Schema({
     name: {
         type: String,
@@ -13,8 +65,32 @@ const organizationSchema = new Schema({
         required: true,
     },
     photo: {
+        type: Object,
+        required: true,
+    },
+    number: {
         type: String,
+        required: true,
     },
 })
+const administrationSchema = new Schema({
+    name: {
+        type: String,
+        required: true,
+    },
+    field: [
+        {
+            type: String,
+            required: true,
+        },
+    ],
+})
 
-module.exports = mongoose.model('Organization', organizationSchema)
+const Desa = mongoose.model('Desa', desaSchema)
+const kegiatanDesa = mongoose.model('kegiatan', kegiatanSchema)
+const potensiDesa = mongoose.model('potensi', potensiSchema)
+const AdministrasiDesa = mongoose.model('administration', administrationSchema)
+const PerangkatDesa = mongoose.model('perangkat', organizationSchema)
+module.exports = {
+    PerangkatDesa, AdministrasiDesa, potensiDesa, kegiatanDesa, Desa,
+}

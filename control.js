@@ -2,25 +2,56 @@ const database = require('./database/models')
 require('./database/conn')
 
 const {
-    Desa,
+    PerangkatDesa,
 } = database
+const perangkats = [
+    {
+        name: 'Agusalim, S.Sos, MAP',
+        position: 'Kepala Desa',
+        photo: 'agusalim.jpg',
+        number: '082812345678',
+    },
+    {
+        name: 'Asmaun, SH',
+        position: 'Sekretaris Desa',
+        photo: 'sriwahyuni.jpg',
+        number: '082812345678',
+    },
+    {
+        name: 'Trinil C',
+        position: 'Kasi Pemerintahan',
+        photo: 'trinil.jpg',
+        number: '082812345678',
+    },
+    {
+        name: 'Anjas A',
+        position: 'Kasi Kesejahteraan',
+        photo: 'anjas.jpg',
+        number: '082812345678',
+    },
+    {
+        name: 'Sarmin',
+        position: 'Kasi Pelayanan',
+        photo: 'sarmin.jpg',
+        number: '082812345678',
+    },
+    {
+        name: 'Isrofil',
+        position: 'Kadus',
+        photo: 'isrofil.jpg',
+        number: '082812345678',
+    },
+    {
+        name: 'Jasman',
+        position: 'Kadus',
+        photo: 'jasman.jpg',
+        number: '082812345678',
+    },
+]
 
-const desa = new Desa({
-    name: 'Konda 1',
-    location: 'Konda, Kec. Konda, Kab. Konawe Selatan, Sulawesi Tenggara',
-    population: 1000,
-    vision: 'Terwujudnya Desa Konda 1 yang sejahtera, mandiri, dan berdaya saing',
-    mission: [
-        'Meningkatkan kesejahteraan masyarakat melalui pemberdayaan ekonomi',
-        'Meningkatkan kualitas pelayanan publik',
-        'Menstabilkan keamanan dan ketertiban masyarakat',
-        'menjaga dan meningkatkan kualitas lingkungan hidup',
-        'Mensejahterakan masyarakat melalui pemberdayaan sosial',
-    ],
-})
+const Seed = async () => {
+    const seed = await PerangkatDesa.insertMany(perangkats)
+    console.log(seed)
+}
 
-desa.save().then((result) => {
-    console.log(result)
-}).catch((err) => {
-    console.log(err)
-})
+Seed()

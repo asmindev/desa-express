@@ -4,9 +4,9 @@ const FormData = require('form-data');
 const { PerangkatDesa } = require('../../../database/models');
 
 const Perangkat = async (req, res) => {
-    const perangkat = await PerangkatDesa.find();
+    const perangkats = await PerangkatDesa.find();
     res.render('perangkat', {
-        title: 'Perangkat Desa', layout: 'layouts/main', perangkat,
+        title: 'Perangkat Desa', layout: 'layouts/main', perangkats,
     });
 };
 

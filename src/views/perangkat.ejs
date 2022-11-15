@@ -22,59 +22,37 @@
         <div>
             <h1 class="font-bold text-2xl text-center uppercase text-gray-700">perangkat desa</h1>
         </div>
-        <div class="mt-4 w-full lg:w-10/12 px-4 lg:px-0 flex flex-col lg:flex-row flex-wrap mx-auto">
-            <div class="w-full lg:w-1/2 p-2">
-                <div  data-aos="fade-up" class="w-full flex rounded overflow-hidden h-full items-center border">
-                    <div class="w-1/3 h-full">
-                        <img src="assets/img/pakdes.png" alt="" class="w-full h-full object-cover">
-                    </div>
-                    <div class="w-2/3 p-4">
-                        <table class="w-full text-sm">
-                            <tr>
-                                <td class="">Nama</td>
-                                <td>:</td>
-                                <td>Ir. H. M. Aminuddin, M.Si</td>
-                            </tr>
-                            <tr>
-                                <td class="">Jabatan</td>
-                                <td>:</td>
-                                <td>Kepala Desa</td>
-                            </tr>
-                            <tr>
-                                <td class="">No. Telp</td>
-                                <td>:</td>
-                                <td>0812-3456-7890</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="w-full lg:w-1/2 p-2">
-                <div data-aos="fade-up" class="w-full flex rounded overflow-hidden h-full items-center border">
-                    <div class="w-1/3 h-full">
-                        <img src="assets/img/kegiatan.jpeg" alt="" class="w-full h-full object-cover">
-                    </div>
-                    <div class="w-2/3 p-4">
-                        <table class="w-full text-sm">
-                            <tr>
-                                <td class="">Nama</td>
-                                <td>:</td>
-                                <td>Ir. H. M. Aminuddin, M.Si</td>
-                            </tr>
-                            <tr>
-                                <td class="">Jabatan</td>
-                                <td>:</td>
-                                <td>Kepala Desa</td>
-                            </tr>
-                            <tr>
-                                <td class="">No. Telp</td>
-                                <td>:</td>
-                                <td>0812-3456-7890</td>
-                            </tr>
-                        </table>
+        <div class="mt-4 w-full lg:w-10/12 px-4 lg:px-0 flex flex-col lg:flex-row flex-wrap mx-auto justify-center">
+
+            <!-- ejs looping perangkats -->
+            <% perangkats.forEach(perangkat => { %>
+                <div class="w-full lg:w-1/2 p-2">
+                    <div data-aos="fade-up" class="w-full flex flex-col lg:flex-row rounded overflow-hidden h-full items-center border">
+                        <div class="w-1/3 h-full mt-4 lg:mt-0">
+                            <img src="assets/img/kegiatan.jpeg" alt="" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-full lg:w-2/3 p-4">
+                            <table class="w-full text-sm">
+                                <tr>
+                                    <td class="">Nama</td>
+                                    <td>:</td>
+                                    <td class=""><%= perangkat.name %></td>
+                                </tr>
+                                <tr>
+                                    <td class="">Jabatan</td>
+                                    <td>:</td>
+                                    <td class=""><%= perangkat.position %></td>
+                                </tr>
+                                <tr>
+                                    <td class="">No. Telp</td>
+                                    <td>:</td>
+                                    <td class=""><%= perangkat.number %></td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <% }); %>
         </div>
     </div>
 </section>

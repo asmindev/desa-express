@@ -1,247 +1,225 @@
 
-    <!-- ======= Header ======= -->
-    <%- include('layouts/nav') %>
-    <section class="">
-        <!-- bg fixed -->
-        <div class="bg-fixed bg-cover bg-center bg-no-repeat bg-gray-400 h-[80vh] relative" style="background-image: url('assets/img/bg.jpeg');">
-            <!-- overlay black -->
-            <div class="bg-gradient-to-t from-black/75 to-transparent bg-opacity-50 absolute bottom-0 left-0 w-full h-3/4"></div>
-            <div class="font-raleway w-full h-full absolute z-10 flex justify-center items-center">
-                <div class="w-10/12 lg:w-full lg:flex items-center flex-col">
-                    <h1 class="text-left text-xl lg:text-5xl text-white font-bold">Selamat Datang di  <%= desa.name %></h1>
-                    <span class="flex items-center gap-3">
-                        <i class="ri-map-pin-2-line font-lg text-white"></i>
-                        <p class="text-white text-sm"><%= desa.location %></p>
-                    </span>
-                    <a href="#about">
-                        <button class="bg-green-500 text-green-50 font-medium py-2 px-4 rounded mt-5">Selengkapnya</button>
-                    </a>
+<%- include('layouts/nav') %>
+<section class="">
+    <div class="bg-fixed bg-cover bg-center bg-no-repeat bg-gray-400 h-[80vh] relative" style="background-image: url('assets/img/bg.jpeg');">
+        <div class="bg-gradient-to-t from-black/75 to-transparent bg-opacity-50 absolute bottom-0 left-0 w-full h-3/4"></div>
+        <div class="font-raleway w-full h-full absolute z-10 flex justify-center items-center">
+            <div class="w-10/12 lg:w-full lg:flex items-center flex-col">
+                <h1 class="text-left text-xl lg:text-5xl text-white font-bold">Selamat Datang di  <%= desa.name %></h1>
+                <span class="flex items-center gap-3">
+                    <i class="ri-map-pin-2-line font-lg text-white"></i>
+                    <p class="text-white text-sm"><%= desa.location %></p>
+                </span>
+                <a href="#about">
+                    <button class="bg-green-500 text-green-50 font-medium py-2 px-4 rounded mt-5">Selengkapnya</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="about" class="mt-12">
+    <div id="" class="px-4 lg:px-0 lg:w-10/12 mx-auto">
+        <div class="w-full h-full">
+            <div class="mt-12 lg:w-10/12 mx-auto h-full lg:flex">
+                <div data-aos="fade-up" class="w-1/2 mx-auto">
+                    <img class="w-full object-cover" src="/assets/img/pakdes.png" alt="">
+                </div>
+                <div>
+                    <h2 class="text-2xl font-semibold">Kepala Desa</h2>
+                    <p class="text-justify text-sm leading-loose my-4">Selamat datang di Website resmi Pemerintah Desa Konda 1 Kecamatan Konda, Kabupaten Konawe Selatan, Sulawesi Tenggara.  Ini adalah ruang media informasi desa sebagai sarana komunikasi dan keterbukaan informasi publik. Jangan lupa selalu ikuti website dan media sosial kami untuk update informasi dalam penyelenggaran pemerintahan di Desa Konda 1. Terima kasih sudah mengunjungi website kami. Semoga bermanfaat, kritik dan saran selalu kami harapkan untuk desa yang lebih baik.                            </p>
+                    <h1 class="text-3xl font-semibold my-2">AGUSALIM, S.Sos, MAP</h1>
                 </div>
             </div>
         </div>
-    </section>
-    <section id="about" class="mt-12">
-        <div id="" class="px-4 lg:px-0 lg:w-10/12 mx-auto">
-            <div class="w-full h-full">
-                <div class="mt-12 w-full lg:w-10/12 mx-auto h-full lg:flex gap-12">
-                    <div data-aos="fade-right" class="w-1/2 mx-auto h-92 lg:flex justify-end">
-                        <img class="w-80 object-cover" src="/assets/img/pakdes.png" alt="kepala desa">
-                    </div>
-                    <div data-aos="fade-left" class="w-full lg:w-1/2">
-                        <div class="lg:flex h-80">
-                            <div class="lg:flex h-full justify-evenly flex-col mt-2">
-                                <h1 class="text-2xl font-bold text-gray-700">Kepala Desa</h1>
-                               <p class="text-justify text-sm leading-loose my-4">Selamat datang di Website resmi Pemerintah Desa Konda 1 Kecamatan Konda, Kabupaten Konawe Selatan, Sulawesi Tenggara.  Ini adalah ruang media informasi desa sebagai sarana komunikasi dan keterbukaan informasi publik. Jangan lupa selalu ikuti website dan media sosial kami untuk update informasi dalam penyelenggaran pemerintahan di Desa Konda 1. Terima kasih sudah mengunjungi website kami. Semoga bermanfaat, kritik dan saran selalu kami harapkan untuk desa yang lebih baik.                            </p>
-                                <h2 class="text-xl font-bold text-gray-700">AGUSALIM,S.Sos,MAP</h2>
-                            </div>
+    </div>
+</section>
+<section class="mt-16">
+    <div class="px-4 lg:px-0 lg:w-10/12 mx-auto mt-16">
+        <div class="w-full text-center">
+            <h1 class="font-bold text-xl lg:text-2xl">Visi & Misi Desa Konda 1</h1>
+            <div class="flex w-1/6 mx-auto items-center mt-2">
+                <div class="basis-1/3 h-[2px] bg-gray-600"></div>
+                <div class="basis-1/3 h-[4px] bg-green-400"></div>
+                <div class="basis-1/3 h-[2px] bg-gray-600"></div>
+            </div>
+        </div>
+        <div class="w-full h-full mt-12">
+            <div class="lg:w-10/12 mx-auto h-full flex gap-12 lg:flex-row-reverse flex-col-reverse">
+                <div data-aos="fade-right"  class="w-full lg:w-1/2">
+                    <div class="lg:flex h-80">
+                        <div class="lg:flex h-full justify-evenly flex-col mt-2">
+                            <h1 class="text-2xl font-bold text-gray-700">Visi</h1>
+                            <p class="text-justify text-sm leading-loose my-4">Terwujudnya Desa Konda 1 yang mandiri, sejahtera, dan berdaya saing.</p>
+                            <h1 class="text-2xl font-bold text-gray-700">Misi</h1>
+                            <p class="text-justify text-sm leading-loose">1. Meningkatkan kesejahteraan masyarakat melalui pemberdayaan ekonomi dan pembangunan infrastruktur.</p>
+                            <p class="text-justify text-sm leading-loose">2. Meningkatkan kualitas pelayanan publik.</p>
+                            <p class="text-justify text-sm leading-loose">3. Meningkatkan kualitas pemerintahan yang bersih, akuntabel, dan transparan.</p>
                         </div>
                     </div>
-
+                </div>
+                <div data-aos="fade-left"  class="w-1/2 mx-auto h-92 lg:flex justify-end">
+                    <img class="w-80 object-cover" src="/assets/img/pakdes.png" alt="kepala desa">
                 </div>
             </div>
         </div>
-    </section>
-    <section class="mt-16">
-        <div class="px-4 lg:px-0 lg:w-10/12 mx-auto mt-16">
-            <div class="w-full text-center">
-                <h1 class="font-bold text-xl lg:text-2xl">Visi & Misi Desa Konda 1</h1>
-                <!-- border with green color at bottom and side left and right gray color -->
-                <div class="flex w-1/6 mx-auto items-center mt-2">
-                    <div class="basis-1/3 h-[2px] bg-gray-600"></div>
-                    <div class="basis-1/3 h-[4px] bg-green-400"></div>
-                    <div class="basis-1/3 h-[2px] bg-gray-600"></div>
-                </div>
-            </div>
-            <div class="w-full h-full mt-12">
-                <div class="lg:w-10/12 mx-auto h-full flex gap-12 lg:flex-row-reverse flex-col-reverse">
-                    <div data-aos="fade-right"  class="w-full lg:w-1/2">
-                        <!-- visi misi -->
-                        <div class="lg:flex h-80">
-                            <div class="lg:flex h-full justify-evenly flex-col mt-2">
-                                <h1 class="text-2xl font-bold text-gray-700">Visi</h1>
-                                <p class="text-justify text-sm leading-loose my-4">Terwujudnya Desa Konda 1 yang mandiri, sejahtera, dan berdaya saing.</p>
-                                <h1 class="text-2xl font-bold text-gray-700">Misi</h1>
-                                <p class="text-justify text-sm leading-loose">1. Meningkatkan kesejahteraan masyarakat melalui pemberdayaan ekonomi dan pembangunan infrastruktur.</p>
-                                <p class="text-justify text-sm leading-loose">2. Meningkatkan kualitas pelayanan publik.</p>
-                                <p class="text-justify text-sm leading-loose">3. Meningkatkan kualitas pemerintahan yang bersih, akuntabel, dan transparan.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div data-aos="fade-left"  class="w-1/2 mx-auto h-92 lg:flex justify-end">
-                        <img class="w-80 object-cover" src="/assets/img/pakdes.png" alt="kepala desa">
-                    </div>
-                </div>
+    </div>
+</section>
+<section class="py-10">
+    <div class="px-4 lg:px-0 lg:w-10/12 mx-auto mt-16">
+        <div class="w-full text-center">
+            <h1 class="font-bold text-xl lg:text-2xl">Struktur Organisasi Desa Konda 1</h1>
+            <div class="flex w-1/6 mx-auto items-center mt-2">
+                <div class="basis-1/3 h-[2px] bg-gray-600"></div>
+                <div class="basis-1/3 h-[4px] bg-green-400"></div>
+                <div class="basis-1/3 h-[2px] bg-gray-600"></div>
             </div>
         </div>
-    </section>
-    <section class="py-10">
-        <div class="px-4 lg:px-0 lg:w-10/12 mx-auto mt-16">
-            <div class="w-full text-center">
-                <h1 class="font-bold text-xl lg:text-2xl">Struktur Organisasi Desa Konda 1</h1>
-                <!-- border with green color at bottom and side left and right gray color -->
-                <div class="flex w-1/6 mx-auto items-center mt-2">
-                    <div class="basis-1/3 h-[2px] bg-gray-600"></div>
-                    <div class="basis-1/3 h-[4px] bg-green-400"></div>
-                    <div class="basis-1/3 h-[2px] bg-gray-600"></div>
+        <div class="w-full h-full mt-12">
+            <div class="my-8">
+                <h1 class="font-bold text-gray-700 text-center">Pengurus Desa Konda</h1>
+            </div>
+            <div class="w-full justify-center flex flex-col lg:flex-row flex-wrap">
+                <div class="md:w-1/3 lg:w-1/4 py-2 lg:px-2 mx-auto">
+                    <div data-aos="fade-left" class="w-full h-full p-4 bg-white border-[.5px] hover:shadow-lg rounded-lg transition-all duration-200">
+                        <div class="w-1/2 mx-auto">
+                            <img class="w-full h-full object-cover rounded-t-lg" src="/assets/img/pakdes.png" alt="kepala desa">
+                        </div>
+                        <div class="w-full">
+                            <div class="w-full h-full flex flex-col justify-center items-center">
+                                <h1 class="font-medium text-gray-700">AGUSALIM,S.Sos,MAP</h1>
+                                <p class="text-sm text-gray-500">Kepala Desa</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/3 lg:w-1/4 py-2 lg:px-2 mx-auto">
+                    <div data-aos="fade-up" class="w-full h-full p-4 bg-white border-[.5px] hover:shadow-lg rounded-lg transition-all duration-200">
+                        <div class="w-1/2 mx-auto">
+                            <img class="w-full h-full object-cover rounded-t-lg" src="/assets/img/pakdes.png" alt="kepala desa">
+                        </div>
+                        <div class="w-full">
+                            <div class="w-full h-full flex flex-col justify-center items-center">
+                                <h1 class="font-medium text-gray-700">ASMAUN.SH</h1>
+                                <p class="text-sm text-gray-500">Sekretari Desa</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/3 lg:w-1/4 py-2 lg:px-2 mx-auto">
+                    <div data-aos="fade-right" class="w-full h-full p-4 bg-white border-[.5px] hover:shadow-lg rounded-lg transition-all duration-200">
+                        <div class="w-1/2 mx-auto">
+                            <img class="w-full h-full object-cover rounded-t-lg" src="/assets/img/pakdes.png" alt="kepala desa">
+                        </div>
+                        <div class="w-full">
+                            <div class="w-full h-full flex flex-col justify-center items-center">
+                                <h1 class="font-medium text-gray-700">SARMIN</h1>
+                                <p class="text-sm text-gray-500">Kasi Pelayanan</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- daftar pengurus desa konda, kepala desa, sekretaris, bendahara dengar gambar -->
-            <div class="w-full h-full mt-12">
-                <div class="my-8">
-                    <h1 class="font-bold text-gray-700 text-center">Pengurus Desa Konda</h1>
-                </div>
-                <div class="w-full justify-center flex flex-col lg:flex-row flex-wrap">
-                    <div class="md:w-1/3 lg:w-1/4 py-2 lg:px-2 mx-auto">
-                        <div data-aos="fade-left" class="w-full h-full p-4 bg-white border-[.5px] hover:shadow-lg rounded-lg transition-all duration-200">
-                            <div class="w-1/2 mx-auto">
-                                <img class="w-full h-full object-cover rounded-t-lg" src="/assets/img/pakdes.png" alt="kepala desa">
-                            </div>
-                            <div class="w-full">
-                                <div class="w-full h-full flex flex-col justify-center items-center">
-                                    <h1 class="font-medium text-gray-700">AGUSALIM,S.Sos,MAP</h1>
-                                    <p class="text-sm text-gray-500">Kepala Desa</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="md:w-1/3 lg:w-1/4 py-2 lg:px-2 mx-auto">
-                        <div data-aos="fade-up" class="w-full h-full p-4 bg-white border-[.5px] hover:shadow-lg rounded-lg transition-all duration-200">
-                            <div class="w-1/2 mx-auto">
-                                <img class="w-full h-full object-cover rounded-t-lg" src="/assets/img/pakdes.png" alt="kepala desa">
-                            </div>
-                            <div class="w-full">
-                                <div class="w-full h-full flex flex-col justify-center items-center">
-                                    <h1 class="font-medium text-gray-700">ASMAUN.SH</h1>
-                                    <p class="text-sm text-gray-500">Sekretari Desa</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="md:w-1/3 lg:w-1/4 py-2 lg:px-2 mx-auto">
-                        <div data-aos="fade-right" class="w-full h-full p-4 bg-white border-[.5px] hover:shadow-lg rounded-lg transition-all duration-200">
-                            <div class="w-1/2 mx-auto">
-                                <img class="w-full h-full object-cover rounded-t-lg" src="/assets/img/pakdes.png" alt="kepala desa">
-                            </div>
-                            <div class="w-full">
-                                <div class="w-full h-full flex flex-col justify-center items-center">
-                                    <h1 class="font-medium text-gray-700">SARMIN</h1>
-                                    <p class="text-sm text-gray-500">Kasi Pelayanan</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- button to link /perangkat-desa -->
-                <div class="w-full flex justify-center mt-8">
-                    <a href="/perangkat-desa" class="w-1/2 lg:w-1/4 bg-green-400 hover:bg-green-500 text-white text-center py-2 rounded-lg transition-all duration-200">Lihat Selengkapnya</a>
-                </div>
+            <div class="w-full flex justify-center mt-8">
+                <a href="/perangkat-desa" class="w-1/2 lg:w-1/4 bg-green-400 hover:bg-green-500 text-white text-center py-2 rounded-lg transition-all duration-200">Lihat Selengkapnya</a>
             </div>
         </div>
-    </section>
-    <section class="my-12">
-        <!-- potensi Desa -->
-        <div class="px-4 lg:px-0 lg:w-10/12 mx-auto mt-16">
-            <div class="w-full text-center">
-                <h1 class="font-bold text-xl lg:text-2xl">Potensi Desa Konda 1</h1>
-                <!-- border with green color at bottom and side left and right gray color -->
-                <div class="flex w-1/6 mx-auto items-center mt-2">
-                    <div class="basis-1/3 h-[2px] bg-gray-600"></div>
-                    <div class="basis-1/3 h-[4px] bg-green-400"></div>
-                    <div class="basis-1/3 h-[2px] bg-gray-600"></div>
-                </div>
+    </div>
+</section>
+<!-- <section class="my-12">
+    <div class="px-4 lg:px-0 lg:w-10/12 mx-auto mt-16">
+        <div class="w-full text-center">
+            <h1 class="font-bold text-xl lg:text-2xl">Potensi Desa Konda 1</h1>
+            <div class="flex w-1/6 mx-auto items-center mt-2">
+                <div class="basis-1/3 h-[2px] bg-gray-600"></div>
+                <div class="basis-1/3 h-[4px] bg-green-400"></div>
+                <div class="basis-1/3 h-[2px] bg-gray-600"></div>
             </div>
-            <div class="w-full h-full mt-12">
-                <div class="my-8">
-                    <h1 class="font-bold text-gray-700 text-center">Potensi Desa Konda</h1>
-                </div>
-                <div class="w-full justify-center flex flex-col lg:flex-row flex-wrap">
-                    <div class="w-full md:w-1/2 lg:w-1/3 py-2 lg:px-2 mx-auto">
-                        <div data-aos="fade-right" class="w-full h-full bg-white border-[.5px] hover:shadow-lg rounded-lg transition-all duration-200 overflow-hidden">
-                            <div class="w-full">
-                                <img class="w-full h-full object-cover rounded-t-lg" src="/assets/img/potensi.jpg" alt="kepala desa">
-                            </div>
-                            <div class="w-full p-4">
-                                <div class="w-full h-full">
-                                    <h1 class="font-medium text-gray-700">Perkebunan</h1>
-                                    <p class="text-sm text-gray-500 mt-2 truncate">Perkebunan merupakan salah satu potensi desa yang sangat menjanjikan</p>
-                                </div>
-                            </div>
+        </div>
+        <div class="w-full h-full mt-12">
+            <div class="my-8">
+                <h1 class="font-bold text-gray-700 text-center">Potensi Desa Konda</h1>
+            </div>
+            <div class="w-full justify-center flex flex-col lg:flex-row flex-wrap">
+                <div class="w-full md:w-1/2 lg:w-1/3 py-2 lg:px-2 mx-auto">
+                    <div data-aos="fade-right" class="w-full h-full bg-white border-[.5px] hover:shadow-lg rounded-lg transition-all duration-200 overflow-hidden">
+                        <div class="w-full">
+                            <img class="w-full h-full object-cover rounded-t-lg" src="/assets/img/potensi.jpg" alt="kepala desa">
                         </div>
-                    </div>
-                    <!-- perikanan -->
-                    <div class="w-full md:w-1/2 lg:w-1/3 py-2 lg:px-2 mx-auto">
-                        <div data-aos="fade-up" class="w-full h-full bg-white border-[.5px] hover:shadow-lg rounded-lg transition-all duration-200 overflow-hidden">
-                            <div class="w-full">
-                                <img class="w-full h-full object-cover rounded-t-lg" src="/assets/img/potensi.jpg" alt="kepala desa">
-                            </div>
-                            <div class="w-full p-4">
-                                <div class="w-full h-full">
-                                    <h1 class="font-medium text-gray-700">Perikanan</h1>
-                                    <p class="text-sm text-gray-500 mt-2 truncate">Perikanan merupakan salah satu potensi desa yang sangat menjanjikan</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- pertanian -->
-                    <div class="w-full md:w-1/2 lg:w-1/3 py-2 lg:px-2 mx-auto">
-                        <div data-aos="fade-left" class="w-full h-full bg-white border-[.5px] hover:shadow-lg rounded-lg transition-shadow duration-1000 overflow-hidden">
-                            <div class="w-full">
-                                <img class="w-full h-full object-cover rounded-t-lg" src="/assets/img/potensi.jpg" alt="kepala desa">
-                            </div>
-                            <div class="w-full p-4">
-                                <div class="w-full h-full">
-                                    <h1 class="font-medium text-gray-700">Pertanian</h1>
-                                    <p class="text-sm text-gray-500 mt-2 truncate">Pertanian merupakan salah satu potensi desa yang sangat menjanjikan</p>
-                                </div>
+                        <div class="w-full p-4">
+                            <div class="w-full h-full">
+                                <h1 class="font-medium text-gray-700">Perkebunan</h1>
+                                <p class="text-sm text-gray-500 mt-2 truncate">Perkebunan merupakan salah satu potensi desa yang sangat menjanjikan</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- button to link /potensi-desa -->
-                <div class="w-full flex justify-center mt-8">
-                    <a href="/potensi-desa" class="w-1/2 lg:w-1/4 bg-green-400 hover:bg-green-500 text-white text-center py-2 rounded-lg transition-all duration-200">Lihat Selengkapnya</a>
-                </div>
-            </div>
-    </section>
-    <section>
-        <!-- kegiatan desa -->
-        <div class="px-4 lg:px-0 lg:w-10/12 mx-auto mt-16">
-            <div class="w-full text-center">
-                <h1 class="font-bold text-xl lg:text-2xl">Kegiatan Desa Konda 1</h1>
-                <!-- border with green color at bottom and side left and right gray color -->
-                <div class="flex w-1/6 mx-auto items-center mt-2">
-                    <div class="basis-1/3 h-[2px] bg-gray-600"></div>
-                    <div class="basis-1/3 h-[4px] bg-green-400"></div>
-                    <div class="basis-1/3 h-[2px] bg-gray-600"></div>
-                </div>
-            </div>
-            <div class="w-full h-full mt-12">
-                <div class="my-8">
-                    <h1 class="font-bold text-gray-700 text-center">Kegiatan Desa Konda</h1>
-                </div>
-                <div class="w-full justify-center flex flex-col lg:flex-row flex-wrap">
-                    <div class="w-full md:w-1/2 lg:w-1/3 py-2 lg:px-2 mx-auto">
-                        <div data-aos="fade-right" class="w-full h-full bg-white border-[.5px] hover:shadow-lg rounded-lg transition-all duration-200 overflow-hidden">
-                            <div class="w-full">
-                                <img class="w-full h-full object-cover rounded-t-lg" src="/assets/img/kegiatan.jpeg" alt="kepala desa">
+                <div class="w-full md:w-1/2 lg:w-1/3 py-2 lg:px-2 mx-auto">
+                    <div data-aos="fade-up" class="w-full h-full bg-white border-[.5px] hover:shadow-lg rounded-lg transition-all duration-200 overflow-hidden">
+                        <div class="w-full">
+                            <img class="w-full h-full object-cover rounded-t-lg" src="/assets/img/potensi.jpg" alt="kepala desa">
+                        </div>
+                        <div class="w-full p-4">
+                            <div class="w-full h-full">
+                                <h1 class="font-medium text-gray-700">Perikanan</h1>
+                                <p class="text-sm text-gray-500 mt-2 truncate">Perikanan merupakan salah satu potensi desa yang sangat menjanjikan</p>
                             </div>
-                            <div class="w-full p-4">
-                                <div class="w-full h-full">
-                                    <div class="w-full flex gap-2 items-center">
-                                        <h1 class="font-medium text-xl text-gray-700">Membuat Jalan</h1>
-                                        <!-- waktu -->
-                                        <h3 class="text-gray-600 text-xs">16 November 2020 11:37:47 WITA</h3>
-                                    </div>
-                                    <p class="text-sm text-gray-500 mt-2 truncate">Kegiatan ini dilakukan untuk mempermudah masyarakat dalam beraktivitas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 lg:w-1/3 py-2 lg:px-2 mx-auto">
+                    <div data-aos="fade-left" class="w-full h-full bg-white border-[.5px] hover:shadow-lg rounded-lg transition-shadow duration-1000 overflow-hidden">
+                        <div class="w-full">
+                            <img class="w-full h-full object-cover rounded-t-lg" src="/assets/img/potensi.jpg" alt="kepala desa">
+                        </div>
+                        <div class="w-full p-4">
+                            <div class="w-full h-full">
+                                <h1 class="font-medium text-gray-700">Pertanian</h1>
+                                <p class="text-sm text-gray-500 mt-2 truncate">Pertanian merupakan salah satu potensi desa yang sangat menjanjikan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full flex justify-center mt-8">
+                <a href="/potensi-desa" class="w-1/2 lg:w-1/4 bg-green-400 hover:bg-green-500 text-white text-center py-2 rounded-lg transition-all duration-200">Lihat Selengkapnya</a>
+            </div>
+        </div>
+</section>
+<section>
+    <div class="px-4 lg:px-0 lg:w-10/12 mx-auto mt-16">
+        <div class="w-full text-center">
+            <h1 class="font-bold text-xl lg:text-2xl">Kegiatan Desa Konda 1</h1>
+            <div class="flex w-1/6 mx-auto items-center mt-2">
+                <div class="basis-1/3 h-[2px] bg-gray-600"></div>
+                <div class="basis-1/3 h-[4px] bg-green-400"></div>
+                <div class="basis-1/3 h-[2px] bg-gray-600"></div>
+            </div>
+        </div>
+        <div class="w-full h-full mt-12">
+            <div class="my-8">
+                <h1 class="font-bold text-gray-700 text-center">Kegiatan Desa Konda</h1>
+            </div>
+            <div class="w-full justify-center flex flex-col lg:flex-row flex-wrap">
+                <div class="w-full md:w-1/2 lg:w-1/3 py-2 lg:px-2 mx-auto">
+                    <div data-aos="fade-right" class="w-full h-full bg-white border-[.5px] hover:shadow-lg rounded-lg transition-all duration-200 overflow-hidden">
+                        <div class="w-full">
+                            <img class="w-full h-full object-cover rounded-t-lg" src="/assets/img/kegiatan.jpeg" alt="kepala desa">
+                        </div>
+                        <div class="w-full p-4">
+                            <div class="w-full h-full">
+                                <div class="w-full flex gap-2 items-center">
+                                    <h1 class="font-medium text-xl text-gray-700">Membuat Jalan</h1>
+                                    <h3 class="text-gray-600 text-xs">16 November 2020 11:37:47 WITA</h3>
                                 </div>
-                                <!-- button selengkapnya -->
-                                <div class="w-full flex justify-end mt-8">
-                                    <a href="/kegiatan-desa?id=jalan" class="px-3 bg-green-400 hover:bg-green-500 text-white text-center py-2 rounded-lg transition-all duration-200">Selengkapnya</a>
-                                </div>
+                                <p class="text-sm text-gray-500 mt-2 truncate">Kegiatan ini dilakukan untuk mempermudah masyarakat dalam beraktivitas</p>
+                            </div>
+                            <div class="w-full flex justify-end mt-8">
+                                <a href="/kegiatan-desa?id=jalan" class="px-3 bg-green-400 hover:bg-green-500 text-white text-center py-2 rounded-lg transition-all duration-200">Selengkapnya</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section> -->

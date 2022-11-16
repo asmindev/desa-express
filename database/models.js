@@ -24,9 +24,17 @@ const desaSchema = new Schema({
         type: Array,
         required: true,
     },
+    openingSpech: {
+        type: String,
+        required: true,
+    },
 })
 
 const potensiSchema = new Schema({
+    name: {
+        type: String,
+        required: true,
+    },
     type: {
         type: String,
         required: true,
@@ -47,6 +55,10 @@ const kegiatanSchema = new Schema({
     },
     photo: {
         type: String,
+        required: true,
+    },
+    date: {
+        type: Date,
         required: true,
     },
     description: {
@@ -87,10 +99,10 @@ const administrationSchema = new Schema({
 })
 
 const Desa = mongoose.model('Desa', desaSchema)
-const kegiatanDesa = mongoose.model('kegiatan', kegiatanSchema)
-const potensiDesa = mongoose.model('potensi', potensiSchema)
+const KegiatanDesa = mongoose.model('kegiatan', kegiatanSchema)
+const PotensiDesa = mongoose.model('potensi', potensiSchema)
 const AdministrasiDesa = mongoose.model('administration', administrationSchema)
 const PerangkatDesa = mongoose.model('perangkat', organizationSchema)
 module.exports = {
-    PerangkatDesa, AdministrasiDesa, potensiDesa, kegiatanDesa, Desa,
+    PerangkatDesa, AdministrasiDesa, PotensiDesa, KegiatanDesa, Desa,
 }

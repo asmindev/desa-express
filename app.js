@@ -41,6 +41,7 @@ app.get('/', routes.Home);
 app.get('/perangkat-desa', routes.Perangkat);
 app.post('/perangkat-desa', routes.addPerangkat);
 app.get('/administrasi-desa', routes.Administrasi);
+app.get('/tentang-desa', routes.tentangDesa);
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`)
 })

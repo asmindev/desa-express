@@ -20,16 +20,18 @@
 <section id="about" class="mt-12 overflow-hidden">
     <div id="" class="px-4 lg:px-0 lg:w-10/12 mx-auto">
         <div class="w-full h-full">
-            <div class="mt-12 lg:w-10/12 mx-auto h-full lg:flex items-center">
-                <div data-aos="fade-right" class="w-1/2 lg:w-1/4 mx-auto lg:flex justify-end">
-                    <img class="w-full h-full object-cover" src="/assets/img/pakdes.png" alt="kepala desa">
+            <div class="mt-12 lg:w-10/12 mx-auto h-full lg:flex items-center justify-center gap-3">
+                <div data-aos="fade-right" class="w-1/2 lg:w-1/3 lg:flex justify-end">
+                    <img class="w-full max-h-80 object-cover" src="https://cdn.dribbble.com/users/2364329/screenshots/5930135/aa.jpg?compress=1&resize=800x600&vertical=top" alt="kepala desa">
                 </div>
                 <div data-aos="fade-left" class="w-full lg:w-1/2">
                     <div class="lg:flex w-full">
                         <div class="lg:flex h-full justify-evenly flex-col mt-2">
                             <h1 class="text-2xl font-bold text-gray-700">Kepala Desa</h1>
-                            <p class="text-justify text-sm leading-loose my-4">Selamat datang di Website resmi Pemerintah Desa Konda 1 Kecamatan Konda, Kabupaten Konawe Selatan, Sulawesi Tenggara.  Ini adalah ruang media informasi desa sebagai sarana komunikasi dan keterbukaan informasi publik. Jangan lupa selalu ikuti website dan media sosial kami untuk update informasi dalam penyelenggaran pemerintahan di Desa Konda 1. Terima kasih sudah mengunjungi website kami. Semoga bermanfaat, kritik dan saran selalu kami harapkan untuk desa yang lebih baik.                            </p>
-                            <h2 class="text-xl font-bold text-gray-700">AGUSALIM,S.Sos,MAP</h2>
+                            <p class="text-justify text-sm leading-loose my-4">
+                                <%= desa.openingSpech %>
+                            </p>
+                            <h2 class="text-xl font-bold text-gray-700"><%= desa.orgs.kepalaDesa.name %></h2>
                         </div>
                     </div>
                 </div>
@@ -63,7 +65,7 @@
                     </div>
                 </div>
                 <div data-aos="fade-left"  class="w-1/2 mx-auto h-92 lg:flex justify-end">
-                    <img class="w-80 object-cover" src="/assets/img/pakdes.png" alt="kepala desa">
+                    <img class="w-80 object-cover " src="https://cdn.dribbble.com/users/2364329/screenshots/5930135/aa.jpg?compress=1&resize=800x600&vertical=top" alt="kepala desa">
                 </div>
             </div>
         </div>
@@ -84,40 +86,42 @@
                 <h1 class="font-bold text-gray-700 text-center">Pengurus Desa Konda</h1>
             </div>
             <div class="w-full justify-center flex flex-col lg:flex-row flex-wrap">
-                <div class="md:w-1/3 lg:w-1/4 py-2 lg:px-2 mx-auto">
+                <div class="md:w-1/3 lg:w-1/4 py-2 lg:px-2 mx-auto lg:order-2">
                     <div data-aos="fade-left" class="w-full h-full p-4 bg-white border-[.5px] hover:shadow-lg rounded-lg transition-all duration-200">
                         <div class="w-1/2 mx-auto">
-                            <img class="w-full h-full object-cover rounded-t-lg" src="/assets/img/pakdes.png" alt="kepala desa">
+                            <img class="w-full max-h-40 object-cover rounded-t-lg" src="https://cdn.dribbble.com/users/2364329/screenshots/5930135/aa.jpg?compress=1&resize=800x600&vertical=top" alt="kepala desa">
                         </div>
                         <div class="w-full">
                             <div class="w-full h-full flex flex-col justify-center items-center">
-                                <h1 class="font-medium text-gray-700">AGUSALIM,S.Sos,MAP</h1>
+                                <!-- when position kepala desa qand get data desa.orgs-->
+
+                                <h1 class="font-medium text-gray-700"><%= desa.orgs.kepalaDesa.name %> </h1>
                                 <p class="text-sm text-gray-500">Kepala Desa</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="md:w-1/3 lg:w-1/4 py-2 lg:px-2 mx-auto">
+                <div class="md:w-1/3 lg:w-1/4 py-2 lg:px-2 mx-auto lg:order-1">
                     <div data-aos="fade-up" class="w-full h-full p-4 bg-white border-[.5px] hover:shadow-lg rounded-lg transition-all duration-200">
                         <div class="w-1/2 mx-auto">
-                            <img class="w-full h-full object-cover rounded-t-lg" src="/assets/img/pakdes.png" alt="kepala desa">
+                            <img class="w-full h-full object-cover rounded-t-lg" src="https://cdn.dribbble.com/users/2364329/screenshots/5930135/aa.jpg?compress=1&resize=800x600&vertical=top" alt="kepala desa">
                         </div>
                         <div class="w-full">
                             <div class="w-full h-full flex flex-col justify-center items-center">
-                                <h1 class="font-medium text-gray-700">ASMAUN.SH</h1>
+                                <h1 class="font-medium text-gray-700"><%= desa.orgs.sekretarisDesa.name %></h1>
                                 <p class="text-sm text-gray-500">Sekretari Desa</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="md:w-1/3 lg:w-1/4 py-2 lg:px-2 mx-auto">
+                <div class="md:w-1/3 lg:w-1/4 py-2 lg:px-2 mx-auto lg:order-3">
                     <div data-aos="fade-right" class="w-full h-full p-4 bg-white border-[.5px] hover:shadow-lg rounded-lg transition-all duration-200">
                         <div class="w-1/2 mx-auto">
-                            <img class="w-full h-full object-cover rounded-t-lg" src="/assets/img/pakdes.png" alt="kepala desa">
+                            <img class="w-full h-full object-cover rounded-t-lg" src="https://cdn.dribbble.com/users/2364329/screenshots/5930135/aa.jpg?compress=1&resize=800x600&vertical=top" alt="kepala desa">
                         </div>
                         <div class="w-full">
                             <div class="w-full h-full flex flex-col justify-center items-center">
-                                <h1 class="font-medium text-gray-700">SARMIN</h1>
+                                <h1 class="font-medium text-gray-700"><%= desa.orgs.kasiPelayanan.name %></h1>
                                 <p class="text-sm text-gray-500">Kasi Pelayanan</p>
                             </div>
                         </div>
@@ -145,45 +149,21 @@
                 <h1 class="font-bold text-gray-700 text-center">Potensi Desa Konda</h1>
             </div>
             <div class="w-full justify-center flex flex-col lg:flex-row flex-wrap">
-                <div class="w-full md:w-1/2 lg:w-1/3 py-2 lg:px-2 mx-auto">
-                    <div data-aos="fade-right" class="w-full h-full bg-white border-[.5px] hover:shadow-lg rounded-lg transition-all duration-200 overflow-hidden">
-                        <div class="w-full">
-                            <img class="w-full h-full object-cover rounded-t-lg" src="/assets/img/potensi.jpg" alt="kepala desa">
-                        </div>
-                        <div class="w-full p-4">
-                            <div class="w-full h-full">
-                                <h1 class="font-medium text-gray-700">Perkebunan</h1>
-                                <p class="text-sm text-gray-500 mt-2 truncate">Perkebunan merupakan salah satu potensi desa yang sangat menjanjikan</p>
+                <% desa.potensi.forEach((potensi) => { %>
+                    <div class="w-full md:w-1/2 lg:w-1/3 py-2 lg:px-2 mx-auto">
+                        <div data-aos="fade-up" class="w-full h-full bg-white border-[.5px] hover:shadow-lg rounded-lg transition-all duration-200 overflow-hidden">
+                            <div class="w-full">
+                                <img class="w-full max-h-80 object-cover rounded-t-lg" src="<%= potensi.photo %> " alt="kepala desa">
+                            </div>
+                            <div class="w-full p-4">
+                                <div class="w-full h-full">
+                                    <h1 class="font-medium text-gray-700"><%= potensi.name %> </h1>
+                                    <p class="text-sm text-gray-500 mt-2 truncate"><%= potensi.description %> </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="w-full md:w-1/2 lg:w-1/3 py-2 lg:px-2 mx-auto">
-                    <div data-aos="fade-up" class="w-full h-full bg-white border-[.5px] hover:shadow-lg rounded-lg transition-all duration-200 overflow-hidden">
-                        <div class="w-full">
-                            <img class="w-full h-full object-cover rounded-t-lg" src="/assets/img/potensi.jpg" alt="kepala desa">
-                        </div>
-                        <div class="w-full p-4">
-                            <div class="w-full h-full">
-                                <h1 class="font-medium text-gray-700">Perikanan</h1>
-                                <p class="text-sm text-gray-500 mt-2 truncate">Perikanan merupakan salah satu potensi desa yang sangat menjanjikan</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-full md:w-1/2 lg:w-1/3 py-2 lg:px-2 mx-auto">
-                    <div data-aos="fade-left" class="w-full h-full bg-white border-[.5px] hover:shadow-lg rounded-lg transition-shadow duration-1000 overflow-hidden">
-                        <div class="w-full">
-                            <img class="w-full h-full object-cover rounded-t-lg" src="/assets/img/potensi.jpg" alt="kepala desa">
-                        </div>
-                        <div class="w-full p-4">
-                            <div class="w-full h-full">
-                                <h1 class="font-medium text-gray-700">Pertanian</h1>
-                                <p class="text-sm text-gray-500 mt-2 truncate">Pertanian merupakan salah satu potensi desa yang sangat menjanjikan</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <% }) %>
             </div>
             <div class="w-full flex justify-center mt-8">
                 <a href="/potensi-desa" class="w-1/2 lg:w-1/4 bg-green-400 hover:bg-green-500 text-white text-center py-2 rounded-lg transition-all duration-200">Lihat Selengkapnya</a>
@@ -205,25 +185,34 @@
                 <h1 class="font-bold text-gray-700 text-center">Kegiatan Desa Konda</h1>
             </div>
             <div class="w-full justify-center flex flex-col lg:flex-row flex-wrap">
-                <div class="w-full md:w-1/2 lg:w-1/3 py-2 lg:px-2 mx-auto">
-                    <div data-aos="fade-right" class="w-full h-full bg-white border-[.5px] hover:shadow-lg rounded-lg transition-all duration-200 overflow-hidden">
-                        <div class="w-full">
-                            <img class="w-full h-full object-cover rounded-t-lg" src="/assets/img/kegiatan.jpeg" alt="kepala desa">
-                        </div>
-                        <div class="w-full p-4">
-                            <div class="w-full h-full">
-                                <div class="w-full flex gap-2 items-center">
-                                    <h1 class="font-medium text-xl text-gray-700">Membuat Jalan</h1>
-                                    <h3 class="text-gray-600 text-xs">16 November 2020 11:37:47 WITA</h3>
-                                </div>
-                                <p class="text-sm text-gray-500 mt-2 truncate">Kegiatan ini dilakukan untuk mempermudah masyarakat dalam beraktivitas</p>
+                <% desa.kegiatan.forEach(kegiatan => { %>
+                    <div class="w-full md:w-1/2 lg:w-1/3 py-2 lg:px-2 mx-auto">
+                        <div data-aos="fade-right" class="w-full h-full bg-white border-[.5px] hover:shadow-lg rounded-lg transition-all duration-200 overflow-hidden">
+                            <div class="w-full">
+                                <img class="w-full h-full object-cover rounded-t-lg" src="<%= kegiatan.photo %> " alt="<%= kegiatan.name %> ">
                             </div>
-                            <div class="w-full flex justify-end mt-8">
-                                <a href="/kegiatan-desa?id=jalan" class="px-3 bg-green-400 hover:bg-green-500 text-white text-center py-2 rounded-lg transition-all duration-200">Selengkapnya</a>
+                            <div class="w-full p-4">
+                                <div class="w-full h-full">
+                                    <div class="w-full flex gap-2 items-center">
+                                        <h1 class="font-medium text-xl text-gray-700"><%= kegiatan.name %> </h1>
+                                        <h3 class="text-gray-600 text-xs"><%= kegiatan.date.toLocaleDateString('id-ID', {
+                                            timeZone: 'Asia/Jakarta',
+                                            weekday: 'long',
+                                            year: 'numeric',
+                                            month: 'long',
+                                            day: 'numeric',
+                                        }) %> </h3>
+                                    </div>
+                                    <p class="text-sm text-gray-500 mt-2 truncate"><%= kegiatan.description %> </p>
+                                </div>
+                                <div class="w-full flex justify-end mt-8">
+                                    <a href="/kegiatan-desa?id=jalan" class="px-3 bg-green-400 hover:bg-green-500 text-white text-center py-2 rounded-lg transition-all duration-200">Selengkapnya</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+
+                <% }) %>
             </div>
         </div>
     </div>

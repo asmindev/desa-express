@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth h-full">
+<html data-theme="light" lang="en" class="scroll-smooth h-full">
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -7,7 +7,6 @@
         <title><%- title %> </title>
         <meta content="" name="description">
         <meta content="" name="keywords">
-
         <!-- Favicons -->
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -21,12 +20,34 @@
         </main>
         <!-- footer copyright desa konda -->
         <footer class="bg-gray-800 text-gray-400 flex-shrink-0 mt-12">
-            <div class="container mx-auto px-6 py-4">
+            <div class="container mx-auto px-6 py-12">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <div class="flex items-center">
-                        <a href="#" class="text-gray-100 text-xl font-bold hover:text-gray-400">Desa Konda</a>
+                        <div>
+                            <!-- contact detail. like phone, address, and etc -->
+                           <table>
+                            <tbody class="text-sm text-gray-300">
+                                <tr class="flex gap-4">
+                                    <td><i class="ri-map-pin-line"></i></td>
+                                    <td>Desa Konda, Kecamatan Konda, Kabupaten Konawe Selatan, Sulawesi Tenggara</td>
+                                </tr>
+                                <tr class="flex gap-4">
+                                    <td><i class="ri-phone-line"></i></td>
+                                    <td>0822-2222-2222</td>
+                                </tr>
+                                <tr class="flex gap-4">
+                                    <td><i class="ri-mail-line"></i></td>
+                                    <td>desakonda@gmail.com</td>
+                                </tr>
+                            </tbody>
+                           </table>
+                           <!-- copyright desa konda -->
+                            <div class="text-sm text-gray-300 mt-4 flex gap-2 px-1">
+                                &copy; <p id="year"></p> Desa Konda. All rights reserved.
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex items-center">
+                    <div class="flex items-center mt-12 lg:mt-0">
                         <a href="#" class="text-gray-100 text-xl font-bold hover:text-gray-400">Desa Konda</a>
                     </div>
                 </div>
@@ -34,6 +55,8 @@
         </footer>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script>
+            const id = document.getElementById('year');
+            id.innerHTML = new Date().getFullYear();
             AOS.init();
         </script>
       </body>

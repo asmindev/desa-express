@@ -3128,6 +3128,14 @@ html {
   overflow: hidden;
 }
 
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.overscroll-auto {
+  overscroll-behavior: auto;
+}
+
 .scroll-smooth {
   scroll-behavior: smooth;
 }

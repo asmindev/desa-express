@@ -22,51 +22,27 @@
     </div>
     <div class="mt-12 w-full lg:w-10/12 mx-auto">
         <div class="w-full flex flex-col md:flex-row flex-wrap justify-center">
-            <div class="w-full md:w-1/3 lg:w-1/4 p-4 relative">
-                <div tabindex="0" class="border collapse collapse-arrow bg-base-100 rounded">
-                    <div class="collapse-title text-xl font-medium">
-                        Persyaratan Membuat Akta Kelahiran
-                    </div>
-                    <div class="collapse-content">
-                        <ul>
-                           <li>1. Surat Pengantar Ketua RT Setempat</li>
-                           <li>2. Kartu Keluarga</li>
-                           <li>3. Surat Bidan Asli atau SPTJM</li>
-                           <li>4. Foto Copy KTP Orang Tua Kandung</li>
-                        </ul>
-                    </div>
-                  </div>
-            </div>
-            <div class="w-full md:w-1/3 lg:w-1/4 p-4 relative">
-                <div tabindex="0" class="border rounded collapse collapse-arrow bg-base-100">
-                    <div class="collapse-title text-xl font-medium">
-                        Persyaratan Membuat Akta Kelahiran
-                    </div>
-                    <div class="collapse-content">
-                        <ul>
-                           <li>1. Surat Pengantar Ketua RT Setempat</li>
-                           <li>2. Kartu Keluarga</li>
-                           <li>3. Surat Bidan Asli atau SPTJM</li>
-                           <li>4. Foto Copy KTP Orang Tua Kandung</li>
-                        </ul>
-                    </div>
-                  </div>
-            </div>
-            <div class="w-full md:w-1/3 lg:w-1/4 p-4 relative">
-                <div tabindex="0" class="border rounded collapse collapse-arrow bg-base-100">
-                    <div class="collapse-title text-xl font-medium">
-                        Persyaratan Membuat Akta Kelahiran
-                    </div>
-                    <div class="collapse-content">
-                        <ul>
-                           <li>1. Surat Pengantar Ketua RT Setempat</li>
-                           <li>2. Kartu Keluarga</li>
-                           <li>3. Surat Bidan Asli atau SPTJM</li>
-                           <li>4. Foto Copy KTP Orang Tua Kandung</li>
-                        </ul>
-                    </div>
-                  </div>
-            </div>
+            <% administrasi.forEach(item => { %>
+                <div class="w-full md:w-1/3 lg:w-1/4 p-4 relative">
+                    <div tabindex="0" class="border rounded collapse collapse-arrow bg-base-100">
+                        <div class="collapse-title text-xl font-medium">
+                            <h1><%= item.name %> </h1>
+                        </div>
+                        <div class="collapse-content">
+                            <ul>
+                                <% item.fields.forEach((item, index) => { %>
+                                    <li>
+                                        <span><%= index += 1 %>. </span>
+                                        <span><%= item %> </span>
+                                    </li>
+                                <% }) %>
+                            </ul>
+                        </div>
+                      </div>
+                </div>
+
+
+            <% }) %>
         </div>
 
     </div>

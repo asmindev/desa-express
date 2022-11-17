@@ -17,6 +17,10 @@ const { adminPerangkat } = require('./admin/perangkat/perangkat');
 const { addPerangkat } = require('./admin/perangkat/addPerangkat');
 const { editPerangkat } = require('./admin/perangkat/editPerangkat');
 const { deletePerangkat } = require('./admin/perangkat/deletePerangkat');
+const { adminAdministrasi } = require('./admin/administrasi/administrasi');
+const { addAdministrasi } = require('./admin/administrasi/addAdministrasi');
+const { editAdministrasi } = require('./admin/administrasi/editAdministrasi');
+const { deleteAdministrasi } = require('./admin/administrasi/deleteAdministrasi');
 
 module.exports = {
     Home,
@@ -38,4 +42,9 @@ module.exports = {
     adminPerangkat,
     editPerangkat,
     deletePerangkat,
+    adminAdministrasi,
+    addAdministrasi,
+    editAdministrasi,
+    deleteAdministrasi,
+
 };

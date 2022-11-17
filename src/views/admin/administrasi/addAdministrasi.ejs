@@ -1,0 +1,56 @@
+<%- include("../../layouts/adminNav") %>
+<section>
+    <div class="mt-20 w-full lg:w-9/12 mx-auto">
+        <div class="w-full">
+            <h1 class="text-3xl font-bold text-center">Tambah Data Desa</h1>
+            <!-- form -->
+            <div class="w-full">
+                <form action="/admin/administrasi-desa/add" method="POST" enctype="multipart/form-data">
+                    <!-- dynamic field with button to add and remove element-->
+                    <div class="w-full md:w-1/2 mx-auto">
+                        <div class="my-4">
+                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nama Administrasi</label>
+                            <input required type="text" name="name" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Nama Administrasi">
+                        </div>
+                        <div id="first" class="my-4">
+                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Syarat ke 1</label>
+                            <input required type="text" name="first" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Syarat ke 1">
+                        </div>
+                        <div>
+                            <button type="button" id="add" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">Tambah Field</button>
+                            <button type="button" id="delete" class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">Hapus Field</button>
+                        </div>
+                        <div class="my-4">
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Tambah Data</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    const addBtn = document.getElementById('add');
+    const deleteBtn = document.getElementById('delete');
+    const first = document.getElementById('first');
+    let count = 1;
+    addBtn.addEventListener('click', () => {
+        count++;
+        const newField = document.createElement('div');
+        newField.innerHTML = `
+        <div class="my-4">
+            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Syarat ke ${count}</label>
+            <input required type="text" name="${count}" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Syarat ke ${count}">
+        </div>
+        `;
+        first.appendChild(newField);
+    });
+    deleteBtn.addEventListener('click', () => {
+        if (count > 1) {
+            first.removeChild(first.lastChild);
+            count--;
+        }
+    });
+</script>

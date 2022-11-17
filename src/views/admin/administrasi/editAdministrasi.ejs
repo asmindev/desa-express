@@ -1,0 +1,60 @@
+<%- include("../../layouts/adminNav") %>
+<section>
+    <div class="mt-20 w-full lg:w-9/12 mx-auto">
+        <div class="w-full">
+            <h1 class="text-3xl font-bold text-center">Edit Data Administrasi Desa</h1>
+            <!-- form -->
+            <div class="w-full">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    <div class="w-full md:w-1/2 mx-auto">
+                        <div class="my-4">
+                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nama Administrasi</label>
+                            <input value="<%= administrasi.name %> " required type="text" name="name" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Nama Administrasi">
+                        </div>
+                        <div id="parent">
+                            <% administrasi.fields.forEach((item, index) => { %>
+                                <div id="<%=index += 1%>" class="my-4">
+                                    <label id="<%=index%>" for="field<%=index%>" class="block text-gray-700 text-sm font-bold mb-2">Syarat ke <%=index%></label>
+                                    <input value="<%=item%>" required type="text" name="field<%=index%>" id="field<%=index%>" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Syarat ke <%=index%>">
+                                </div>
+                            <% }) %>
+                        </div>
+                        <div>
+                            <input type="hidden" name="id" value="<%=administrasi._id%>">
+                        </div>
+                        <div>
+                            <button type="button" id="add" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">Tambah Field</button>
+                            <button type="button" id="delete" class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">Hapus Field</button>
+                        </div>
+                        <div class="my-4">
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Update Data</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    const add = document.getElementById('add');
+    const deleteField = document.getElementById('delete');
+    let count = "<%= administrasi.fields.length %>";
+    add.addEventListener('click', () => {
+        count++;
+        const parent = document.getElementById('parent');
+        const div = document.createElement('div');
+        div.setAttribute('id', count);
+        div.setAttribute('class', 'my-4');
+        div.innerHTML = `
+            <label id="${count}" for="field${count}" class="block text-gray-700 text-sm font-bold mb-2">Syarat ke ${count}</label>
+            <input value required type="text" name="field${count}" id="field${count}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Syarat ke ${count}">
+        `;
+        parent.appendChild(div);
+    });
+    deleteField.addEventListener('click', () => {
+        const parent = document.getElementById('parent');
+        const child = document.getElementById(count);
+        parent.removeChild(child);
+        count--;
+    });
+</script>

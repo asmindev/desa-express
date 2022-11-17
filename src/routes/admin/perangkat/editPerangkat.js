@@ -1,5 +1,5 @@
 const { PerangkatDesa } = require('../../../../database/models');
-const { uploadImage } = require('../../../../database/controll');
+const { uploadImage, deleteImage } = require('../../../../database/controll');
 
 const editPerangkat = async (req, res) => {
     if (req.method === 'GET') {
@@ -15,17 +15,29 @@ const editPerangkat = async (req, res) => {
             const {
                 name, position, number, id,
             } = req.body;
-            console.log(req.body);
-            const { image } = req.files;
-            const photo = await uploadImage(image, 'desa-konda/perangkat-desa');
-            const updatePerangkat = await PerangkatDesa.findByIdAndUpdate(id, {
-                name,
-                position,
-                number,
-                photo,
-            });
+            if (req.files) {
+                const { image } = req.files;
+                console.log({ id })
+                const get = await PerangkatDesa.findById(id);
+                console.log(get);
+                const publicId = get.photo.public_id;
+                const del = await deleteImage(publicId);
+                console.log({ del });
+                const photo = await uploadImage(image, 'desa-konda/perangkat-desa');
+                await PerangkatDesa.findByIdAndUpdate(id, {
+                    name,
+                    position,
+                    number,
+                    photo,
+                });
+            } else {
+                await PerangkatDesa.findByIdAndUpdate(id, {
+                    name,
+                    position,
+                    number,
+                });
+            }
 
-            console.log(updatePerangkat);
             const msg = {
                 type: 'success',
                 msg: 'Data berhasil diubah',
@@ -33,6 +45,7 @@ const editPerangkat = async (req, res) => {
             req.flash('msg', msg);
             res.redirect('/admin/perangkat-desa');
         } catch (error) {
+            console.log(error);
             req.flash('msg', {
                 type: 'danger',
                 msg: 'Data gagal diubah',

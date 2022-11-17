@@ -90,7 +90,7 @@ const administrationSchema = new Schema({
         type: String,
         required: true,
     },
-    field: [
+    fields: [
         {
             type: String,
             required: true,

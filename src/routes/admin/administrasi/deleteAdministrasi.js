@@ -1,16 +1,14 @@
 // delete from data
-const { PotensiDesa } = require('../../../../database/models');
-const { deleteImage } = require('../../../../database/controll');
+const { AdministrasiDesa } = require('../../../../database/models');
 
-const deletePotensi = async (req, res) => {
+const deleteAdministrasi = async (req, res) => {
     // method post
     if (req.method === 'POST') {
         const { id } = req.body;
-        const result = await PotensiDesa.findById(id);
+        // delete from database
+        const result = await AdministrasiDesa.findByIdAndDelete(id);
+        // check if data is deleted
         if (result) {
-            const publicId = result.photo.public_id;
-            await deleteImage(publicId);
-            await result.remove();
             req.flash('msg', {
                 type: 'success',
                 msg: 'Data berhasil dihapus',
@@ -22,12 +20,12 @@ const deletePotensi = async (req, res) => {
             });
         }
 
-        res.redirect('/admin/potensi-desa');
+        res.redirect('/admin/administrasi-desa');
     } else {
         res.send('Method not allowed');
     }
 };
 
 module.exports = {
-    deletePotensi,
+    deleteAdministrasi,
 };

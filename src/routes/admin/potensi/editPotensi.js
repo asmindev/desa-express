@@ -1,5 +1,5 @@
 const { PotensiDesa } = require('../../../../database/models');
-const { uploadImage } = require('../../../../database/controll');
+const { uploadImage, deleteImage } = require('../../../../database/controll');
 
 const editPotensi = async (req, res) => {
     if (req.method === 'GET') {
@@ -15,17 +15,26 @@ const editPotensi = async (req, res) => {
             const {
                 name, description, category, id,
             } = req.body;
-            console.log(req.body);
-            const { image } = req.files;
-            const photo = await uploadImage(image, 'desa-konda/potensi-desa');
-            const updatePotensi = await PotensiDesa.findByIdAndUpdate(id, {
-                name,
-                description,
-                type: category,
-                photo,
-            });
+            if (req.files) {
+                const { image } = req.files;
+                const photo = await uploadImage(image, 'desa-konda/potensi-desa');
+                const result = await PotensiDesa.findById(id)
+                const publicId = result.photo.public_id
+                await deleteImage(publicId)
+                await PotensiDesa.findByIdAndUpdate(id, {
+                    name,
+                    description,
+                    category,
+                    photo,
+                });
+            } else {
+                await PotensiDesa.findByIdAndUpdate(id, {
+                    name,
+                    description,
+                    type: category,
+                });
+            }
 
-            console.log(updatePotensi);
             const msg = {
                 type: 'success',
                 msg: 'Data berhasil diubah',

@@ -76,6 +76,13 @@ app.post('/admin/perangkat-desa/:id/delete', routes.deletePerangkat);
 app.get('/admin/perangkat-desa/add', routes.addPerangkat);
 app.post('/admin/perangkat-desa/add', routes.addPerangkat);
 
+// admin administrasi routes
+app.get('/admin/administrasi-desa', routes.adminAdministrasi);
+app.get('/admin/administrasi-desa/:id/edit', routes.editAdministrasi);
+app.post('/admin/administrasi-desa/:id/edit', routes.editAdministrasi);
+app.post('/admin/administrasi-desa/:id/delete', routes.deleteAdministrasi);
+app.get('/admin/administrasi-desa/add', routes.addAdministrasi);
+app.post('/admin/administrasi-desa/add', routes.addAdministrasi);
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`)
 })

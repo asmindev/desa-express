@@ -40,7 +40,7 @@ const potensiSchema = new Schema({
         required: true,
     },
     photo: {
-        type: String,
+        type: Object,
         required: true,
     },
     description: {
@@ -54,7 +54,7 @@ const kegiatanSchema = new Schema({
         required: true,
     },
     photo: {
-        type: String,
+        type: Object,
         required: true,
     },
     date: {

@@ -4,8 +4,8 @@ const {
 require('dotenv').config();
 
 const Home = async (req, res) => {
-    const name = process.env.DESA;
-    const desa = await Desa.findOne({ name });
+    const name = process.env.DESA_ID;
+    const desa = await Desa.findById(name.trim());
     const perangkatDesa = await PerangkatDesa.find()
     const potensi = await PotensiDesa.find().limit(3)
     const kegiatan = await KegiatanDesa.find().limit(3)

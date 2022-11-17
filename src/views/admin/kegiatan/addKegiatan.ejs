@@ -1,0 +1,36 @@
+<%- include("../../layouts/adminNav") %>
+<section>
+    <div class="mt-20 w-full lg:w-9/12 mx-auto">
+        <div class="w-full">
+            <h1 class="text-3xl font-bold text-center">Tambah Data Desa</h1>
+            <!-- form -->
+            <div class="w-full">
+                <form action="/admin/Kegiatan-desa/add" method="POST" enctype="multipart/form-data">
+                    <div class="w-full md:w-1/2 mx-auto">
+                        <div class="my-4">
+                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nama Kegiatan</label>
+                            <input type="text" name="name" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Nama Kegiatan">
+                        </div>
+
+                        <div class="my-4">
+                            <!-- date picker -->
+                            <label for="date" class="block text-gray-700 text-sm font-bold mb-2">Tanggal</label>
+                            <input type="date" name="date" id="date" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Tanggal">
+                        </div>
+                        <div class="my-4">
+                            <label for="description" class="block text-gray-700 text-sm font-bold mb-2">Deskripsi Kegiatan</label>
+                            <textarea name="description" id="description" cols="30" rows="10" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Deskripsi Kegiatan"></textarea>
+                        </div>
+                        <div class="my-4">
+                            <label for="image" class="block text-gray-700 text-sm font-bold mb-2">Gambar Kegiatan</label>
+                            <input accept="image/*" type="file" name="image" id="image" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        </div>
+                        <div class="my-4">
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Tambah</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

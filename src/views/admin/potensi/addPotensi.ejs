@@ -1,0 +1,45 @@
+<%- include("../../layouts/adminNav") %>
+<section>
+    <div class="mt-20 w-full lg:w-9/12 mx-auto">
+        <div class="w-full">
+            <h1 class="text-3xl font-bold text-center">Tambah Data Desa</h1>
+            <!-- form -->
+            <div class="w-full">
+                <form action="/admin/potensi-desa/add" method="POST" enctype="multipart/form-data">
+                    <div class="w-full md:w-1/2 mx-auto">
+                        <div class="my-4">
+                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nama Potensi</label>
+                            <input type="text" name="name" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Nama Potensi">
+                        </div>
+
+                        <div class="my-4">
+                            <!-- select  -->
+                            <label for="category" class="block text-gray-700 text-sm font-bold mb-2">Kategori</label>
+                            <select name="category" id="category" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                <option value="wisata">Wisata</option>
+                                <option value="kuliner">Kuliner</option>
+                                <option value="budaya">Budaya</option>
+                                <option value="sejarah">Sejarah</option>
+                                <option value="ternak">Ternak</option>
+                                <option value="pertanian">Pertanian</option>
+                                <option value="">Lainnya</option>
+                            </select>
+                        </div>
+                        <div class="my-4">
+                            <label for="description" class="block text-gray-700 text-sm font-bold mb-2">Deskripsi Potensi</label>
+                            <textarea name="description" id="description" cols="30" rows="10" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Deskripsi Potensi"></textarea>
+                        </div>
+                        <div class="my-4">
+                            <label for="image" class="block text-gray-700 text-sm font-bold mb-2">Gambar Potensi</label>
+                            <input accept="image/*" type="file" name="image" id="image" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        </div>
+                        <div class="my-4">
+                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Tambah</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>

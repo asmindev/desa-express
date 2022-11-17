@@ -1,0 +1,70 @@
+<header id="header" class="w-full fixed flex items-center justify-center bg-gray-400 z-50">
+    <nav class="w-full bg-white shadow-lg">
+        <div class="w-10/12 mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex justify-between w-full">
+                    <div>
+                        <!-- Website Logo -->
+                        <a href="/" class="flex items-center py-4 px-2">
+                            <span class="font-bold text-gray-500 text-2xl font-open-sans">Admin</span>
+                        </a>
+                    </div>
+                    <!-- Primary Navbar items -->
+                    <div class="hidden md:flex items-center space-x-1 font-raleway">
+                        <a href="/admin" class="nva py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Beranda</a>
+                        <a href="/admin/tentang-desa"class="nva py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Tentang Desa</a>
+                        <a href="/admin/administrasi-desa" class="nva py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Pelayanan</a>
+                        <a href="/admin/perangkat-desa" class="nva py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">SOTK</a>
+                        <a href="/admin/potensi-desa" class="nva py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Potensi</a>
+                        <a href="/admin/kegiatan-desa" class="nva py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Kegiatan</a>
+                    </div>
+                </div>
+                <!-- Secondary Navbar items -->
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="outline-none mobile-menu-button">
+                    <svg class=" w-6 h-6 text-gray-500 hover:text-green-500 "
+                        x-show="!showMenu"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                </div>
+            </div>
+        </div>
+        <!-- mobile menu -->
+        <div class="hidden mobile-menu">
+            <ul class="">
+                <li><a href="/admin" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Beranda</a></li>
+                <li><a href="/admin/tentang-desa" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Tentang Desa</a></li>
+                <li><a href="/admin/perangkat-desa" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">SOTK</a></li>
+                <li><a href="/admin/administrasi-desa" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Pelayanan</a></li>
+                <li><a href="/admin/potensi-desa" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Potensi</a></li>
+                <li><a href="/admin/kegiatan-desa" class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300">Kegiatan</a></li>
+            </ul>
+        </div>
+        <script>
+            // set active link base on url path
+            const currentLocation = location.href;
+            const menuItem = document.querySelectorAll('.nva');
+            const menuLength = menuItem.length;
+            for (let i = 0; i < menuLength; i++) {
+                if (menuItem[i].href === currentLocation) {
+                    menuItem[i].className = "py-4 px-2 text-green-500 font-semibold hover:text-green-500 transition duration-300 border-b-4 border-green-500"
+                }
+            }
+            const btn = document.querySelector("button.mobile-menu-button");
+            const menu = document.querySelector(".mobile-menu");
+
+            btn.addEventListener("click", () => {
+                menu.classList.toggle("hidden");
+            });
+        </script>
+    </nav>
+  </header><!-- End Header -->

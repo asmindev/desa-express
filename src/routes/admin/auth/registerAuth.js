@@ -16,26 +16,27 @@ const registerAuth = async (req, res) => {
             const msg = { type: 'danger', msg: 'Tidak bisa menggunakan username atau email ini' };
             req.flash('msg', msg);
             res.redirect('/auth/register');
-        }
-        const hash = await bcrypt.hash(password, 12);
-        // find role, if role is admin, reject to register
-        const role = await User.findOne({ role: 'admin' });
-        if (role) {
-            const msg = { type: 'danger', msg: 'Admin telah ada' };
-            req.flash('msg', msg);
-            res.redirect('/auth/register');
         } else {
-            const newUser = new User({
-                name,
-                username,
-                email,
-                password: hash,
-                role: 'admin',
-            });
-            await newUser.save();
-            const msg = { type: 'success', msg: 'Register Berhasil' };
-            req.flash('msg', msg);
-            res.redirect('/auth/login');
+            const hash = await bcrypt.hash(password, 12);
+            // find role, if role is admin, reject to register
+            const role = await User.findOne({ role: 'admin' });
+            if (role) {
+                const msg = { type: 'danger', msg: 'Admin telah ada' };
+                req.flash('msg', msg);
+                res.redirect('/auth/register');
+            } else {
+                const newUser = new User({
+                    name,
+                    username,
+                    email,
+                    password: hash,
+                    role: 'admin',
+                });
+                await newUser.save();
+                const msg = { type: 'success', msg: 'Register Berhasil' };
+                req.flash('msg', msg);
+                res.redirect('/auth/login');
+            }
         }
     }
 };

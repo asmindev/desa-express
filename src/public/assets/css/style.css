@@ -2905,6 +2905,11 @@ html {
   margin-bottom: 0.5rem;
 }
 
+.my-16 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
 .mt-14 {
   margin-top: 3.5rem;
 }
@@ -3082,6 +3087,18 @@ html {
   width: 18rem;
 }
 
+.w-2\/3 {
+  width: 66.666667%;
+}
+
+.w-8\/12 {
+  width: 66.666667%;
+}
+
+.w-7\/12 {
+  width: 58.333333%;
+}
+
 .min-w-\[32px\] {
   min-width: 32px;
 }
@@ -3124,6 +3141,10 @@ html {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .flex-col {
@@ -3804,6 +3825,10 @@ html {
   .lg\:px-2 {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+  }
+
+  .lg\:text-center {
+    text-align: center;
   }
 
   .lg\:text-5xl {

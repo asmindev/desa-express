@@ -9,22 +9,22 @@
                     <div class="w-full md:w-1/2 mx-auto">
                         <div class="my-4">
                             <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nama</label>
-                            <input type="text" name="name" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Nama">
+                            <input required type="text" name="name" id="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Nama">
                         </div>
 
                         <div class="my-4">
                             <label for="position" class="block text-gray-700 text-sm font-bold mb-2">Position</label>
-                            <input type="text" name="position" id="position" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="jabatan">
+                            <input required type="text" name="position" id="position" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="jabatan">
                         </div>
                         <!-- no handphone -->
                         <div class="my-4">
                             <label for="number" class="block text-gray-700 text-sm font-bold mb-2">No Handphone</label>
                             <!-- phone number -->
-                            <input oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="13" name="number" id="number" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="No Handphone">
+                            <input required oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" maxlength="13" name="number" id="number" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="No Handphone">
                         </div>
                          <div class="my-4">
                             <label for="image" class="block text-gray-700 text-sm font-bold mb-2">Foto</label>
-                            <input accept="image/*" type="file" name="image" id="image" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <input required accept="image/*" type="file" name="image" id="image" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                         </div>
                         <div class="my-4">
                             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Tambah</button>

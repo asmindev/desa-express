@@ -28,6 +28,7 @@ const desaSchema = new Schema({
         type: String,
         required: true,
     },
+
 })
 
 const potensiSchema = new Schema({
@@ -97,12 +98,36 @@ const administrationSchema = new Schema({
         },
     ],
 })
+const userSchema = new Schema({
+    username: {
+        type: String,
+        required: true,
+    },
+    email: {
+        type: String,
+        required: true,
+    },
+    name: {
+        type: String,
+        required: true,
+    },
+    // password hash with bcrypt
+    password: {
+        type: String,
+        required: true,
+    },
+    role: {
+        type: String,
+        required: true,
+    },
+})
 
+const User = mongoose.model('User', userSchema)
 const Desa = mongoose.model('Desa', desaSchema)
 const KegiatanDesa = mongoose.model('kegiatan', kegiatanSchema)
 const PotensiDesa = mongoose.model('potensi', potensiSchema)
 const AdministrasiDesa = mongoose.model('administration', administrationSchema)
 const PerangkatDesa = mongoose.model('perangkat', organizationSchema)
 module.exports = {
-    PerangkatDesa, AdministrasiDesa, PotensiDesa, KegiatanDesa, Desa,
+    PerangkatDesa, AdministrasiDesa, PotensiDesa, KegiatanDesa, Desa, User,
 }

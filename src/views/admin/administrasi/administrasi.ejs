@@ -1,7 +1,7 @@
 <%- include("../../layouts/adminNav") %>
 
 <section>
-    <div class="w-full lg:w-10/12 mx-auto mt-20">
+    <div class="w-10/12 mx-auto mt-20">
         <div class="my-12">
             <h1 class="font-bold text-4xl text-gray-700">Edit Home Page</h1>
             <div class="w-full md:w-1/2">
@@ -26,18 +26,20 @@
         <div class="w-full mx-auto">
             <!-- make table -->
             <div class="w-full">
-                <div class="my-4 w-1/4">
+                <div class="my-4">
                     <!-- add data -->
                     <a href="/admin/administrasi-desa/add" class="w-full bg-blue-500 text-white px-4 py-3 text-sm rounded-md mx-auto">Tambah Data</a>
                 </div>
             </div>
+            <div class="w-full overflow-auto">
+
             <table class="table-auto w-full">
                 <thead>
                     <tr>
                         <th class="px-4 py-2">No</th>
-                        <th class="px-4 py-2">Title</th>
-                        <th class="px-4 py-2">Description</th>
-                        <th class="px-4 py-2">Action</th>
+                        <th class="px-4 py-2">Judul</th>
+                        <th class="px-4 py-2">Deskripsi</th>
+                        <th class="px-4 py-2">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -46,19 +48,21 @@
                             <td class="border px-4 py-2"><%= index += 1 %></td>
                             <td class="border px-4 py-2"><%= item.name %></td>
                             <td class="border px-4 py-2">
-                                <ul>
-                                    <% item.fields.forEach((item, index) => { %>
-                                        <li>
-                                            <span><%= index += 1 %>. </span>
-                                            <span><%= item %> </span>
-                                        </li>
-                                    <% }) %>
-                                </ul>
+                                <div class="w-72 lg:w-full">
+                                    <ul>
+                                        <% item.fields.forEach((item, index) => { %>
+                                            <li>
+                                                <span><%= index += 1 %>. </span>
+                                                <span><%= item %> </span>
+                                            </li>
+                                        <% }) %>
+                                    </ul>
+                                </div>
                             </td>
                             <td class="border px-4 py-2">
                                 <div class="w-full flex gap-3">
                                     <a href="/admin/administrasi-desa/<%= item.id %>/edit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit</a>
-                                    <form action="/admin/administrasi-desa/<%= item.id %>/delete" method="POST">
+                                    <form id="form" action="/admin/administrasi-desa/<%= item.id %>/delete" method="POST">
                                         <input type="hidden" name="id" value="<%= item.id %>">
                                         <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
                                     </form>
@@ -69,5 +73,19 @@
                 </tbody>
             </table>
         </div>
+
+        </div>
     </div>
 </section>
+
+<script>
+    // ask for confirmation before delete
+    const form = document.getElementById('form')
+    form.addEventListener('submit', (e) => {
+        e.preventDefault()
+        const confirm = window.confirm('Apakah anda yakin ingin menghapus data ini?')
+        if (confirm) {
+            form.submit()
+        }
+    })
+</script>

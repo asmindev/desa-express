@@ -5,7 +5,7 @@ const addKegiatan = async (req, res) => {
     if (req.method === 'GET') {
         const kegiatan = await KegiatanDesa.find();
         res.render('admin/kegiatan/addKegiatan', {
-            title: 'Potensi Desa', layout: 'layouts/main', kegiatan,
+            title: 'Tambah Kegiatan Desa', layout: 'layouts/main', kegiatan,
         });
     } else {
         try {

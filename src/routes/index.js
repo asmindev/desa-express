@@ -21,6 +21,9 @@ const { adminAdministrasi } = require('./admin/administrasi/administrasi');
 const { addAdministrasi } = require('./admin/administrasi/addAdministrasi');
 const { editAdministrasi } = require('./admin/administrasi/editAdministrasi');
 const { deleteAdministrasi } = require('./admin/administrasi/deleteAdministrasi');
+const { tentangDesa: tentangDesaAdmin } = require('./admin/tentang/tentang');
+const { loginAuth } = require('./admin/auth/login');
+const { registerAuth } = require('./admin/auth/registerAuth');
 
 module.exports = {
     Home,
@@ -46,5 +49,7 @@ module.exports = {
     addAdministrasi,
     editAdministrasi,
     deleteAdministrasi,
-
+    tentangDesaAdmin,
+    loginAuth,
+    registerAuth,
 };

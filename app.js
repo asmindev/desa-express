@@ -30,6 +30,7 @@ app.use(fileUpload());
 app.use(express.urlencoded({
     extended: true,
 }));
+
 app.use(flash());
 app.use(cookieParser('secret'));
 app.use(ejslayout)
@@ -38,7 +39,8 @@ app.use(cors())
 // set folder views to src/views
 app.set('views', path.join(__dirname, 'src/views'));
 // set folder public to src/public
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'src/public')));
+
 app.set('view engine', 'ejs');
 app.get('/', routes.Home);
 app.get('/perangkat-desa', routes.Perangkat);
@@ -47,6 +49,23 @@ app.get('/administrasi-desa', routes.Administrasi);
 app.get('/tentang-desa', routes.tentangDesa);
 app.get('/potensi-desa', routes.potensiDesa);
 app.get('/kegiatan-desa', routes.kegiatanDesa);
+
+// admin login routes
+app.get('/auth/login', routes.loginAuth);
+app.post('/auth/login', routes.loginAuth);
+
+// auth register routes
+app.get('/auth/register', routes.registerAuth);
+app.post('/auth/register', routes.registerAuth);
+const checkSession = (req, res, next) => {
+    if (req.session.user && req.session.isLoggedIn) {
+        next();
+    } else {
+        res.redirect('/auth/login');
+    }
+};
+// check session in every request to admin routes
+app.use('/admin', checkSession);
 
 // admin routes
 app.get('/admin', routes.AdminHome);
@@ -83,6 +102,10 @@ app.post('/admin/administrasi-desa/:id/edit', routes.editAdministrasi);
 app.post('/admin/administrasi-desa/:id/delete', routes.deleteAdministrasi);
 app.get('/admin/administrasi-desa/add', routes.addAdministrasi);
 app.post('/admin/administrasi-desa/add', routes.addAdministrasi);
+
+// admin tentang desa routes
+app.get('/admin/tentang-desa', routes.tentangDesaAdmin);
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`)
 })

@@ -7,7 +7,7 @@
                 <h1 class="text-left text-xl lg:text-5xl text-white font-bold">Selamat Datang di  <%= desa.name %></h1>
                 <span class="flex items-center gap-3">
                     <i class="ri-map-pin-2-line font-lg text-white"></i>
-                    <p class="text-white text-sm"><%= desa.location %></p>
+                    <p class="text-white text-md"><%= desa.location %></p>
                 </span>
                 <a href="#about">
                     <button class="bg-green-500 text-green-50 font-medium py-2 px-4 rounded mt-5">Selengkapnya</button>
@@ -33,7 +33,7 @@
             </div>
             <div class="lg:w-2/3">
                 <h1 class="text-2xl font-bold text-gray-700 my-4">Kepala Desa</h1>
-                <p class="text-justify leading-loose">
+                <p class="text-justify leading-loose text-md">
                     <%=desa.openingSpech %>
                 </p>
             </div>
@@ -56,11 +56,11 @@
                     <div class="lg:flex h-80">
                         <div class="lg:flex h-full justify-evenly flex-col mt-2">
                             <h1 class="text-2xl font-bold text-gray-700">Visi</h1>
-                            <p class="text-justify text-sm leading-loose my-4">Terwujudnya Desa Konda 1 yang mandiri, sejahtera, dan berdaya saing.</p>
+                            <p class="text-justify text-md leading-loose my-4">Terwujudnya Desa Konda 1 yang mandiri, sejahtera, dan berdaya saing.</p>
                             <h1 class="text-2xl font-bold text-gray-700">Misi</h1>
-                            <p class="text-justify text-sm leading-loose">1. Meningkatkan kesejahteraan masyarakat melalui pemberdayaan ekonomi dan pembangunan infrastruktur.</p>
-                            <p class="text-justify text-sm leading-loose">2. Meningkatkan kualitas pelayanan publik.</p>
-                            <p class="text-justify text-sm leading-loose">3. Meningkatkan kualitas pemerintahan yang bersih, akuntabel, dan transparan.</p>
+                            <p class="text-justify text-md leading-loose">1. Meningkatkan kesejahteraan masyarakat melalui pemberdayaan ekonomi dan pembangunan infrastruktur.</p>
+                            <p class="text-justify text-md leading-loose">2. Meningkatkan kualitas pelayanan publik.</p>
+                            <p class="text-justify text-md leading-loose">3. Meningkatkan kualitas pemerintahan yang bersih, akuntabel, dan transparan.</p>
                         </div>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
                                 <h1 class="font-medium text-gray-700"><%= item.name %> </h1>
                             </div>
                             <div class="collapse-content">
-                                <p class="text-sm text-gray-500 mt-2"><%= item.description %> </p>
+                                <p class="text-md text-gray-500 mt-2"><%= item.description %> </p>
                             </div>
                         </div>
                     </div>
@@ -126,7 +126,7 @@
                             <img src="<%= perangkat.photo.secure_url %>" alt="" class="w-full h-full object-cover">
                         </div>
                         <div class="w-full lg:w-2/3 p-4">
-                            <table class="w-full text-sm">
+                            <table class="w-full text-md">
                                 <tr>
                                     <td class="">Nama</td>
                                     <td>:</td>
@@ -186,7 +186,7 @@
                                     </div>
                                 </div>
                                 <div class="collapse-content">
-                                    <p class="text-sm text-gray-500 mt-2"><%= item.description %> </p>
+                                    <p class="text-md text-gray-500 mt-2"><%= item.description %> </p>
                                 </div>
                             </div>
                         </div>

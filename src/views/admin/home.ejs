@@ -92,7 +92,7 @@
                     <div class="my-4">
                         <label for="title" class="block text-gray-700 text-2xl font-bold mb-2">Edit</label>
                         <!-- if editable.data text length is more than 30 words use textarea -->
-                        <% if (editable.data.length > 50) { %>
+                        <% if (editable.data.length > 80) { %>
                             <textarea name="editable" id="editable" cols="30" rows="10" class="w-full text-gray-600 text-md border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"><%= editable.data %></textarea>
                         <% } else { %>
                             <input required type="text" name="editable" id="editable" class="w-full text-gray-600 text-md border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" value="<%= editable.data %>">

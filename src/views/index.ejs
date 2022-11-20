@@ -1,6 +1,6 @@
 <%- include('layouts/nav') %>
 <section class="">
-    <div class="bg-fixed bg-cover bg-center bg-no-repeat bg-gray-400 h-[80vh] relative" style="background-image: url('assets/img/bg.jpeg');">
+    <div class="bg-fixed bg-cover bg-center bg-no-repeat bg-gray-400 h-[80vh] relative" style="background-image: url('assets/img/bg.jpg');">
         <div class="bg-gradient-to-t from-black/75 to-transparent bg-opacity-50 absolute bottom-0 left-0 w-full h-3/4"></div>
         <div class="font-raleway w-full h-full absolute z-10 flex justify-center items-center">
             <div class="w-10/12 lg:w-full lg:flex items-center flex-col">
@@ -29,7 +29,7 @@
 
         <div class="w-full flex flex-col gap-4 lg:flex-row items-center justify-center">
             <div class="lg:w-1/2 flex justify-end">
-                <img class="lg:w-10/12 h-full object-cover" src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="kepala desa">
+                <img class="lg:w-10/12 h-full object-cover" src="/assets/img/pakdess.png" alt="kepala desa">
             </div>
             <div class="lg:w-2/3">
                 <h1 class="text-2xl font-bold text-gray-700 my-4">Kepala Desa</h1>
@@ -53,26 +53,30 @@
         <div class="w-full h-full mt-12">
             <div class="lg:w-10/12 mx-auto h-full flex gap-12 lg:flex-row-reverse flex-col-reverse">
                 <div data-aos="fade-right"  class="w-full lg:w-1/2">
-                    <div class="lg:flex h-80">
+                    <div class="lg:flex">
                         <div class="lg:flex h-full justify-evenly flex-col mt-2">
                             <h1 class="text-2xl font-bold text-gray-700">Visi</h1>
-                            <p class="text-justify text-md leading-loose my-4">Terwujudnya Desa Konda 1 yang mandiri, sejahtera, dan berdaya saing.</p>
+                            <p class="text-justify text-md leading-loose my-4"><%= desa.vision%></p>
                             <h1 class="text-2xl font-bold text-gray-700">Misi</h1>
                             <p class="text-justify text-md leading-loose">1. Meningkatkan kesejahteraan masyarakat melalui pemberdayaan ekonomi dan pembangunan infrastruktur.</p>
                             <p class="text-justify text-md leading-loose">2. Meningkatkan kualitas pelayanan publik.</p>
                             <p class="text-justify text-md leading-loose">3. Meningkatkan kualitas pemerintahan yang bersih, akuntabel, dan transparan.</p>
+                            <p class="text-justify text-md leading-loose">4. Meningkatkan kebersihan linkungan dan masyarakat</p>
+                            <p class="text-justify text-md leading-loose">5. Meningkatkan kegiatan Keagamaan dalam lingkungan masyarakat.</p>
+
                         </div>
+
                     </div>
                 </div>
                 <div data-aos="fade-left"  class="w-1/2 mx-auto h-92 lg:flex justify-end">
-                    <img class="w-80 object-cover " src="https://cdn.dribbble.com/users/2364329/screenshots/5930135/aa.jpg?compress=1&resize=800x600&vertical=top" alt="kepala desa">
+                    <img class="w-80 object-cover " src="/assets/img/download.jpg" alt="kepala desa">
                 </div>
             </div>
         </div>
     </div>
 </section>
 <section>
-    <div class="mt-16 w-full lg:w-8/12 mx-auto">
+    <div class="mt-16 w-full lg:w-8/12 mx-auto my-12">
         <div class="my-12">
             <h1 class="text-3xl text-center font-bold">Potensi</h1>
             <h1 class="font-bold text-2xl lg:text-5xl text-center">Desa Konda Satu</h1>

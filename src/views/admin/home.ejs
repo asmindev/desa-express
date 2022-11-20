@@ -63,7 +63,14 @@
                                 <tr>
                                     <td class="border px-4 py-2">4</td>
                                     <td class="border px-4 py-2 whitespace-nowrap">Misi Desa</td>
-                                    <td class="border px-4 py-2"><%= desa.mission %> </td>
+                                    <td class="border px-4 py-2">
+                                        <!-- UL WITH FOREACH   -->
+                                        <ul>
+                                            <% desa.mission.forEach((misi, index) => { %>
+                                                <li><%=`${index +=1 }. ${misi}`%></li>
+                                            <% }) %>
+                                        </ul>
+                                    </td>
                                     <td class="border px-4 py-2">
                                         <a href="/admin?edit=5" class="bg-blue-500 text-white px-4 py-1 text-sm rounded-md mx-auto">Edit</a>
                                     </td>
@@ -90,15 +97,37 @@
             <div class="w-full md:w-2/3 lg:w-1/2 mx-auto">
                 <form method="POST">
                     <div class="my-4">
-                        <label for="title" class="block text-gray-700 text-2xl font-bold mb-2">Edit</label>
-                        <!-- if editable.data text length is more than 30 words use textarea -->
-                        <% if (editable.data.length > 80) { %>
-                            <textarea name="editable" id="editable" cols="30" rows="10" class="w-full text-gray-600 text-md border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"><%= editable.data %></textarea>
+                        <% if (editable.field === "mission") {%>
+                            <div>
+                                <div id="parent">
+                                    <% editable.data.forEach((item, index) => { %>
+                                        <div id="<%=index += 1%>" class="my-4">
+                                            <label id="<%=index%>" for="field<%=index%>" class="block text-gray-700 text-sm font-bold mb-2">Misi ke <%=index%></label>
+                                            <input value="<%=item%>" required type="text" name="editable" id="field<%=index%>" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Misi ke <%=index%>">
+                                        </div>
+                                    <% }) %>
+                                </div>
+                                <div>
+                                    <input type="hidden" name="id" value="<%= editable.parent_id %>">
+                                    <input type="hidden" name="field" value="<%= editable.field %>">
+                                </div>
+                                <div>
+                                    <button type="button" id="add" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">Tambah Field</button>
+                                    <button type="button" id="delete" class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">Hapus Field</button>
+                                </div>
+                            </div>
+
                         <% } else { %>
-                            <input required type="text" name="editable" id="editable" class="w-full text-gray-600 text-md border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" value="<%= editable.data %>">
+                            <label for="title" class="block text-gray-700 text-2xl font-bold mb-2">Edit</label>
+                            <!-- if editable.data text length is more than 30 words use textarea -->
+                            <% if (editable.data.length > 80) { %>
+                                <textarea name="editable" id="editable" cols="30" rows="10" class="w-full text-gray-600 text-md border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"><%= editable.data %></textarea>
+                            <% } else { %>
+                                <input required type="text" name="editable" id="editable" class="w-full text-gray-600 text-md border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" value="<%= editable.data %>">
+                            <% } %>
+                            <input type="hidden" name="id" value="<%= editable.parent_id %>">
+                            <input type="hidden" name="field" value="<%= editable.field %>">
                         <% } %>
-                        <input type="hidden" name="id" value="<%= editable.parent_id %>">
-                        <input type="hidden" name="field" value="<%= editable.field %>">
                     </div>
                     <div class="my-4">
                         <button type="submit" class="bg-blue-500 text-white px-4 py-2 text-sm rounded-md mx-auto">Submit</button>
@@ -112,5 +141,28 @@
     //
     if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );
+    }
+    if (document.getElementById('add')) {
+        document.getElementById('add').addEventListener('click', function() {
+            let parent = document.getElementById('parent');
+            let child = document.createElement('div');
+            let id = parent.childElementCount + 1;
+            child.setAttribute('id', id);
+            child.setAttribute('class', 'my-4');
+            child.innerHTML = `
+                <label id="${id}" for="field${id}" class="block text-gray-700 text-sm font-bold mb-2">Misi ke ${id}</label>
+                <input required type="text" name="editable" id="field${id}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Misi ke ${id}">
+            `;
+            parent.appendChild(child);
+        });
+    }
+    if (document.getElementById('delete')) {
+        document.getElementById('delete').addEventListener('click', function() {
+            let parent = document.getElementById('parent');
+            let child = parent.lastElementChild;
+            if (parent.childElementCount > 1) {
+                parent.removeChild(child);
+            }
+        });
     }
 </script>

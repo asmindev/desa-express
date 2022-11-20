@@ -58,12 +58,11 @@
                             <h1 class="text-2xl font-bold text-gray-700">Visi</h1>
                             <p class="text-justify text-md leading-loose my-4"><%= desa.vision%></p>
                             <h1 class="text-2xl font-bold text-gray-700">Misi</h1>
-                            <p class="text-justify text-md leading-loose">1. Meningkatkan kesejahteraan masyarakat melalui pemberdayaan ekonomi dan pembangunan infrastruktur.</p>
-                            <p class="text-justify text-md leading-loose">2. Meningkatkan kualitas pelayanan publik.</p>
-                            <p class="text-justify text-md leading-loose">3. Meningkatkan kualitas pemerintahan yang bersih, akuntabel, dan transparan.</p>
-                            <p class="text-justify text-md leading-loose">4. Meningkatkan kebersihan linkungan dan masyarakat</p>
-                            <p class="text-justify text-md leading-loose">5. Meningkatkan kegiatan Keagamaan dalam lingkungan masyarakat.</p>
-
+                            <ul>
+                                <% desa.mission.forEach((misi, index) => { %>
+                                    <li><p class="text-justify text-md leading-loose"><%=`${index +=1 }. ${misi}`%></p></li>
+                                <% }) %>
+                            </ul>
                         </div>
 
                     </div>

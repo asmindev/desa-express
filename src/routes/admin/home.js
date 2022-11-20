@@ -45,6 +45,7 @@ const Home = async (req, res) => {
     } else if (req.method === 'POST') {
         let pesan;
         const { id, editable: msg, field } = req.body;
+        console.log(req.body)
         const _id = mongoose.Types.ObjectId(id.trim());
         const result = await Desa.updateOne({ _id }, { [field]: msg });
         const desas = await Desa.findById(name.trim());

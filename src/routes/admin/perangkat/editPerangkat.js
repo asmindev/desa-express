@@ -7,7 +7,7 @@ const editPerangkat = async (req, res) => {
         const { id } = req.params;
         const perangkat = await PerangkatDesa.findById(id);
         res.render('admin/perangkat/editPerangkat', {
-            title: 'Kegiatan Desa', layout: 'layouts/main', perangkat,
+            title: 'Edit Perangkat Desa', layout: 'layouts/main', perangkat,
 
         });
     } else {

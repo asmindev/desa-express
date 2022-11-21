@@ -5,7 +5,7 @@
             <h1 class="text-3xl font-bold">Tambah Data Desa</h1>
             <!-- form -->
             <div class="w-full">
-                <form action="/admin/administrasi-desa/add" method="POST" enctype="multipart/form-data">
+                <form id="form" action="/admin/administrasi-desa/add" method="POST" enctype="multipart/form-data">
                     <!-- dynamic field with button to add and remove element-->
                     <div class="w-full md:w-1/2 mx-auto">
                         <div class="my-4">
@@ -21,7 +21,7 @@
                             <button type="button" id="delete" class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">Hapus Field</button>
                         </div>
                         <div class="my-4">
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Tambah Data</button>
+                            <button id="button" type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Tambah Data</button>
                         </div>
                     </div>
                 </form>
@@ -53,4 +53,10 @@
             count--;
         }
     });
+    if (document.getElementById('form')) {
+        document.getElementById('form').addEventListener('submit', function() {
+            this.querySelector('#button').disabled = true;
+            this.querySelector('#button').innerText = 'Loading...';
+        });
+    }
 </script>

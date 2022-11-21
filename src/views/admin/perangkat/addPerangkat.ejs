@@ -5,7 +5,7 @@
             <h1 class="text-3xl font-bold text-center">Tambah Data Desa</h1>
             <!-- form -->
             <div class="w-full px-4">
-                <form action="/admin/perangkat-desa/add" method="POST" enctype="multipart/form-data">
+                <form id="form" action="/admin/perangkat-desa/add" method="POST" enctype="multipart/form-data">
                     <div class="w-full md:w-1/2 mx-auto">
                         <div class="my-4">
                             <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nama</label>
@@ -27,7 +27,7 @@
                             <input required accept="image/*" type="file" name="image" id="image" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                         </div>
                         <div class="my-4">
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Tambah</button>
+                            <button id="button" type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Tambah</button>
                         </div>
                     </div>
                 </form>
@@ -35,3 +35,11 @@
         </div>
     </div>
 </section>
+<script>
+    if (document.getElementById('form')) {
+        document.getElementById('form').addEventListener('submit', function() {
+            this.querySelector('#button').disabled = true;
+            this.querySelector('#button').innerText = 'Loading...';
+        });
+    }
+</script>

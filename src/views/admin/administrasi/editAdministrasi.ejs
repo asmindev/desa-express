@@ -5,7 +5,7 @@
             <h1 class="text-3xl font-bold">Edit Data Administrasi Desa</h1>
             <!-- form -->
             <div class="w-full">
-                <form action="" method="POST" enctype="multipart/form-data">
+                <form id="form" method="POST" enctype="multipart/form-data">
                     <div class="w-full md:w-1/2 mx-auto">
                         <div class="my-4">
                             <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nama Administrasi</label>
@@ -27,7 +27,7 @@
                             <button type="button" id="delete" class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded focus:outline-none focus:shadow-outline">Hapus Field</button>
                         </div>
                         <div class="my-4">
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Update Data</button>
+                            <button id="button" type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Update Data</button>
                         </div>
                     </div>
                 </form>
@@ -57,4 +57,10 @@
         parent.removeChild(child);
         count--;
     });
+    if (document.getElementById('form')) {
+        document.getElementById('form').addEventListener('submit', function() {
+            this.querySelector('#button').disabled = true;
+            this.querySelector('#button').innerText = 'Loading...';
+        });
+    }
 </script>

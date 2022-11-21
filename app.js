@@ -104,7 +104,9 @@ app.get('/admin/administrasi-desa/add', routes.addAdministrasi);
 app.post('/admin/administrasi-desa/add', routes.addAdministrasi);
 
 // admin tentang desa routes
-app.get('/admin/tentang-desa', routes.tentangDesaAdmin);
+// app.get('/admin/tentang-desa', routes.tentangDesaAdmin);
+// 404 page not found
+app.use(routes.notFound);
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`)

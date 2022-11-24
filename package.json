@@ -24,6 +24,7 @@
     "express-session": "^1.17.3",
     "form-data": "^4.0.0",
     "mongoose": "^6.7.2",
+    "nodemailer": "^6.8.0",
     "tailwindcss": "^3.2.4"
   },
   "devDependencies": {

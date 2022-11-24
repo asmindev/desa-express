@@ -5,7 +5,7 @@ const addPerangkat = async (req, res) => {
     if (req.method === 'GET') {
         const perangkat = await PerangkatDesa.find();
         res.render('admin/perangkat/addPerangkat', {
-            title: 'Potensi Desa', layout: 'layouts/main', perangkat,
+            title: 'Edit Perangkat Desa', layout: 'layouts/main', perangkat,
         });
     } else {
         try {

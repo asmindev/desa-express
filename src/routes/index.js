@@ -24,6 +24,7 @@ const { deleteAdministrasi } = require('./admin/administrasi/deleteAdministrasi'
 const { tentangDesa: tentangDesaAdmin } = require('./admin/tentang/tentang');
 const { loginAuth } = require('./admin/auth/login');
 const { registerAuth } = require('./admin/auth/registerAuth');
+const { verify } = require('./admin/auth/verify');
 const notFound = require('./notFound');
 
 module.exports = {
@@ -54,4 +55,5 @@ module.exports = {
     loginAuth,
     registerAuth,
     notFound,
+    verify,
 };

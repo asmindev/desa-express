@@ -6,7 +6,7 @@ const editAdministrasi = async (req, res) => {
         const { id } = req.params;
         const administrasi = await AdministrasiDesa.findById(id);
         res.render('admin/administrasi/editAdministrasi', {
-            title: 'Administrasi Desa', layout: 'layouts/main', administrasi,
+            title: 'Edit Administrasi Desa', layout: 'layouts/main', administrasi,
 
         });
     } else {

@@ -7,7 +7,7 @@ const editPotensi = async (req, res) => {
         const { id } = req.params;
         const potensi = await PotensiDesa.findById(id);
         res.render('admin/potensi/editPotensi', {
-            title: 'Potensi Desa', layout: 'layouts/main', potensi,
+            title: 'Edit Potensi Desa', layout: 'layouts/main', potensi,
 
         });
     } else {

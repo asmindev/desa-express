@@ -4,7 +4,7 @@ const addAdministrasi = async (req, res) => {
     if (req.method === 'GET') {
         const administrasi = await AdministrasiDesa.find();
         res.render('admin/administrasi/addAdministrasi', {
-            title: 'Potensi Desa', layout: 'layouts/main', administrasi,
+            title: 'Tambah Administrasi Desa', layout: 'layouts/main', administrasi,
 
         });
     } else {

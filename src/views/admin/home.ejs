@@ -88,6 +88,10 @@
                     </table>
                 </div>
             </div>
+            <div class="my-12 px-4">
+                <!-- logout -->
+                <a id="logout" href="/auth/logout" class="bg-red-500 text-white px-6 py-3 text-sm rounded-md mx-auto">Keluar</a>
+            </div>
         </div>
     </section>
 <% } else if (editable) {%>
@@ -174,4 +178,12 @@
             this.querySelector('#button').innerText = 'Loading...';
         });
     }
+    const logout = document.getElementById('logout');
+    // ask user if they want to logout
+    logout.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (confirm('Apakah anda yakin ingin keluar?')) {
+            window.location.href = e.target.href;
+        }
+    });
 </script>

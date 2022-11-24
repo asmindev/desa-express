@@ -54,9 +54,14 @@ app.get('/kegiatan-desa', routes.kegiatanDesa);
 app.get('/auth/login', routes.loginAuth);
 app.post('/auth/login', routes.loginAuth);
 
+app.get('/auth/verify/:id', routes.verify)
 // auth register routes
 app.get('/auth/register', routes.registerAuth);
 app.post('/auth/register', routes.registerAuth);
+app.get('/auth/logout', (req, res) => {
+    req.session.destroy();
+    res.redirect('/auth/login');
+});
 const checkSession = (req, res, next) => {
     if (req.session.user && req.session.isLoggedIn) {
         next();

@@ -40,7 +40,6 @@ const Home = async (req, res) => {
                 });
             }
         } else {
-            console.log('masuk sini', msg);
             res.render('admin/home', {
                 title: 'Admin Page', layout: 'layouts/main', desa, editable, msg,
             });

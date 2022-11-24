@@ -33,7 +33,7 @@ const registerAuth = async (req, res) => {
                     role: 'admin',
                 });
                 await newUser.save();
-                const msg = { type: 'success', msg: 'Register Berhasil' };
+                const msg = { type: 'success', msg: 'Register Berhasil', email };
                 req.flash('msg', msg);
                 res.redirect('/auth/login');
             }

@@ -5,7 +5,7 @@ const addPotensi = async (req, res) => {
     if (req.method === 'GET') {
         const potensi = await PotensiDesa.find();
         res.render('admin/potensi/addPotensi', {
-            title: 'Potensi Desa', layout: 'layouts/main', potensi,
+            title: 'Tambah Potensi Desa', layout: 'layouts/main', potensi,
 
         });
     } else {

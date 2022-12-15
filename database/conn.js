@@ -12,7 +12,7 @@ if (!URI) {
         useUnifiedTopology: true,
     }, (err) => {
         if (err) {
-            console.log(err)
+            console.log({ err })
         } else {
             console.log('connected to database')
         }
